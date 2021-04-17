@@ -1,0 +1,422 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92667F1F-E170-457B-88F9-A0554373AE5E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Travel</RootNamespace>
+    <AssemblyName>Travel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\defaults.css" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\css\fonts\icomoon.svg" />
+    <Content Include="Content\css\fonts\Notera_PersonalUseOnly.svg" />
+    <Content Include="Content\css\libs\animate.css" />
+    <Content Include="Content\css\libs\bootstrap.min.css" />
+    <Content Include="Content\css\libs\font-awesome.min.css" />
+    <Content Include="Content\css\libs\icomoon.css" />
+    <Content Include="Content\css\libs\justifiedGallery.min.css" />
+    <Content Include="Content\css\libs\magnific-popup.css" />
+    <Content Include="Content\css\libs\owl.carousel.min.css" />
+    <Content Include="Content\css\styles.css" />
+    <Content Include="Content\css\variables.css" />
+    <Content Include="Content\images\avatar.jpg" />
+    <Content Include="Content\images\avatar\1.jpg" />
+    <Content Include="Content\images\avatar\2.jpg" />
+    <Content Include="Content\images\avatar\3.jpg" />
+    <Content Include="Content\images\featured-slider\1.jpg" />
+    <Content Include="Content\images\featured-slider\2.jpg" />
+    <Content Include="Content\images\featured-slider\3.jpg" />
+    <Content Include="Content\images\featured-slider\4.jpg" />
+    <Content Include="Content\images\featured-slider\5.jpg" />
+    <Content Include="Content\images\featured-slider\bg-3.jpg" />
+    <Content Include="Content\images\featured-slider\bg.jpg" />
+    <Content Include="Content\images\footer\1.jpg" />
+    <Content Include="Content\images\footer\2.jpg" />
+    <Content Include="Content\images\footer\3.jpg" />
+    <Content Include="Content\images\footer\4.jpg" />
+    <Content Include="Content\images\footer\5.jpg" />
+    <Content Include="Content\images\footer\6.jpg" />
+    <Content Include="Content\images\footer\7.jpg" />
+    <Content Include="Content\images\footer\8.jpg" />
+    <Content Include="Content\images\footer\background.jpg" />
+    <Content Include="Content\images\footer\widgets-background.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo-background.jpg" />
+    <Content Include="Content\images\posts\1.jpg" />
+    <Content Include="Content\images\posts\10.jpg" />
+    <Content Include="Content\images\posts\11.jpg" />
+    <Content Include="Content\images\posts\12.jpg" />
+    <Content Include="Content\images\posts\13.jpg" />
+    <Content Include="Content\images\posts\14.jpg" />
+    <Content Include="Content\images\posts\15.jpg" />
+    <Content Include="Content\images\posts\16.jpg" />
+    <Content Include="Content\images\posts\17.jpg" />
+    <Content Include="Content\images\posts\18.jpg" />
+    <Content Include="Content\images\posts\19.jpg" />
+    <Content Include="Content\images\posts\2.jpg" />
+    <Content Include="Content\images\posts\20.jpg" />
+    <Content Include="Content\images\posts\21.jpg" />
+    <Content Include="Content\images\posts\22.jpg" />
+    <Content Include="Content\images\posts\23.jpg" />
+    <Content Include="Content\images\posts\24.jpg" />
+    <Content Include="Content\images\posts\25.jpg" />
+    <Content Include="Content\images\posts\26.jpg" />
+    <Content Include="Content\images\posts\27.jpg" />
+    <Content Include="Content\images\posts\28.jpg" />
+    <Content Include="Content\images\posts\29.jpg" />
+    <Content Include="Content\images\posts\3.jpg" />
+    <Content Include="Content\images\posts\30.jpg" />
+    <Content Include="Content\images\posts\31.jpg" />
+    <Content Include="Content\images\posts\4.jpg" />
+    <Content Include="Content\images\posts\5.jpg" />
+    <Content Include="Content\images\posts\6.jpg" />
+    <Content Include="Content\images\posts\7.jpg" />
+    <Content Include="Content\images\posts\8.jpg" />
+    <Content Include="Content\images\posts\9.jpg" />
+    <Content Include="Content\images\sign.png" />
+    <Content Include="Content\images\single\1.jpg" />
+    <Content Include="Content\images\single\2.jpg" />
+    <Content Include="Content\images\single\3.jpg" />
+    <Content Include="Content\images\single\4.jpg" />
+    <Content Include="Content\images\subcribe-bg.jpg" />
+    <Content Include="Content\images\widgets\about-me\shutterstock_334693031.jpg" />
+    <Content Include="Content\images\widgets\banner\advertise.jpg" />
+    <Content Include="Content\images\widgets\category\1.jpg" />
+    <Content Include="Content\images\widgets\category\2.jpg" />
+    <Content Include="Content\images\widgets\category\3.jpg" />
+    <Content Include="Content\images\widgets\featured-posts\1.jpg" />
+    <Content Include="Content\images\widgets\instagram\1.jpg" />
+    <Content Include="Content\images\widgets\instagram\2.jpg" />
+    <Content Include="Content\images\widgets\instagram\3.jpg" />
+    <Content Include="Content\images\widgets\instagram\4.jpg" />
+    <Content Include="Content\images\widgets\instagram\5.jpg" />
+    <Content Include="Content\images\widgets\instagram\6.jpg" />
+    <Content Include="Content\images\widgets\instagram\7.jpg" />
+    <Content Include="Content\images\widgets\instagram\8.jpg" />
+    <Content Include="Content\images\widgets\instagram\9.jpg" />
+    <Content Include="Content\images\widgets\posts\1.jpg" />
+    <Content Include="Content\images\widgets\posts\2.jpg" />
+    <Content Include="Content\images\widgets\posts\3.jpg" />
+    <Content Include="Content\images\widgets\posts\4.jpg" />
+    <Content Include="Content\js\libs\bootstrap.min.js" />
+    <Content Include="Content\js\libs\jquery-1.12.4.min.js" />
+    <Content Include="Content\js\libs\jquery-scrolltofixed-min.js" />
+    <Content Include="Content\js\libs\jquery.justifiedGallery.min.js" />
+    <Content Include="Content\js\libs\jquery.magnific-popup.js" />
+    <Content Include="Content\js\libs\masonry.pkgd.js" />
+    <Content Include="Content\js\libs\owl.carousel.js" />
+    <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="simple life\.idea\modules.xml" />
+    <Content Include="simple life\.idea\watcherTasks.xml" />
+    <Content Include="simple life\.idea\workspace.xml" />
+    <Content Include="simple life\about.html" />
+    <Content Include="simple life\classic.html" />
+    <Content Include="simple life\contact.html" />
+    <Content Include="simple life\css\defaults.css" />
+    <Content Include="simple life\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="simple life\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="simple life\css\fonts\icomoon.svg" />
+    <Content Include="simple life\css\fonts\Notera_PersonalUseOnly.svg" />
+    <Content Include="simple life\css\libs\animate.css" />
+    <Content Include="simple life\css\libs\bootstrap.min.css" />
+    <Content Include="simple life\css\libs\font-awesome.min.css" />
+    <Content Include="simple life\css\libs\icomoon.css" />
+    <Content Include="simple life\css\libs\justifiedGallery.min.css" />
+    <Content Include="simple life\css\libs\magnific-popup.css" />
+    <Content Include="simple life\css\libs\owl.carousel.min.css" />
+    <Content Include="simple life\css\styles.css" />
+    <Content Include="simple life\css\variables.css" />
+    <Content Include="simple life\footer-v1.html" />
+    <Content Include="simple life\footer-v2.html" />
+    <Content Include="simple life\fullwidth.html" />
+    <Content Include="simple life\grid-1st-large.html" />
+    <Content Include="simple life\grid.html" />
+    <Content Include="simple life\header-v1.html" />
+    <Content Include="simple life\header-v2.html" />
+    <Content Include="simple life\images\avatar.jpg" />
+    <Content Include="simple life\images\avatar\1.jpg" />
+    <Content Include="simple life\images\avatar\2.jpg" />
+    <Content Include="simple life\images\avatar\3.jpg" />
+    <Content Include="simple life\images\featured-slider\1.jpg" />
+    <Content Include="simple life\images\featured-slider\2.jpg" />
+    <Content Include="simple life\images\featured-slider\3.jpg" />
+    <Content Include="simple life\images\featured-slider\4.jpg" />
+    <Content Include="simple life\images\featured-slider\5.jpg" />
+    <Content Include="simple life\images\featured-slider\bg-3.jpg" />
+    <Content Include="simple life\images\featured-slider\bg.jpg" />
+    <Content Include="simple life\images\footer\1.jpg" />
+    <Content Include="simple life\images\footer\2.jpg" />
+    <Content Include="simple life\images\footer\3.jpg" />
+    <Content Include="simple life\images\footer\4.jpg" />
+    <Content Include="simple life\images\footer\5.jpg" />
+    <Content Include="simple life\images\footer\6.jpg" />
+    <Content Include="simple life\images\footer\7.jpg" />
+    <Content Include="simple life\images\footer\8.jpg" />
+    <Content Include="simple life\images\footer\background.jpg" />
+    <Content Include="simple life\images\footer\widgets-background.jpg" />
+    <Content Include="simple life\images\logo.png" />
+    <Content Include="simple life\images\logo-background.jpg" />
+    <Content Include="simple life\images\posts\1.jpg" />
+    <Content Include="simple life\images\posts\10.jpg" />
+    <Content Include="simple life\images\posts\11.jpg" />
+    <Content Include="simple life\images\posts\12.jpg" />
+    <Content Include="simple life\images\posts\13.jpg" />
+    <Content Include="simple life\images\posts\14.jpg" />
+    <Content Include="simple life\images\posts\15.jpg" />
+    <Content Include="simple life\images\posts\16.jpg" />
+    <Content Include="simple life\images\posts\17.jpg" />
+    <Content Include="simple life\images\posts\18.jpg" />
+    <Content Include="simple life\images\posts\19.jpg" />
+    <Content Include="simple life\images\posts\2.jpg" />
+    <Content Include="simple life\images\posts\20.jpg" />
+    <Content Include="simple life\images\posts\21.jpg" />
+    <Content Include="simple life\images\posts\22.jpg" />
+    <Content Include="simple life\images\posts\23.jpg" />
+    <Content Include="simple life\images\posts\24.jpg" />
+    <Content Include="simple life\images\posts\25.jpg" />
+    <Content Include="simple life\images\posts\26.jpg" />
+    <Content Include="simple life\images\posts\27.jpg" />
+    <Content Include="simple life\images\posts\28.jpg" />
+    <Content Include="simple life\images\posts\29.jpg" />
+    <Content Include="simple life\images\posts\3.jpg" />
+    <Content Include="simple life\images\posts\30.jpg" />
+    <Content Include="simple life\images\posts\31.jpg" />
+    <Content Include="simple life\images\posts\4.jpg" />
+    <Content Include="simple life\images\posts\5.jpg" />
+    <Content Include="simple life\images\posts\6.jpg" />
+    <Content Include="simple life\images\posts\7.jpg" />
+    <Content Include="simple life\images\posts\8.jpg" />
+    <Content Include="simple life\images\posts\9.jpg" />
+    <Content Include="simple life\images\sign.png" />
+    <Content Include="simple life\images\single\1.jpg" />
+    <Content Include="simple life\images\single\2.jpg" />
+    <Content Include="simple life\images\single\3.jpg" />
+    <Content Include="simple life\images\single\4.jpg" />
+    <Content Include="simple life\images\subcribe-bg.jpg" />
+    <Content Include="simple life\images\widgets\about-me\shutterstock_334693031.jpg" />
+    <Content Include="simple life\images\widgets\banner\advertise.jpg" />
+    <Content Include="simple life\images\widgets\category\1.jpg" />
+    <Content Include="simple life\images\widgets\category\2.jpg" />
+    <Content Include="simple life\images\widgets\category\3.jpg" />
+    <Content Include="simple life\images\widgets\featured-posts\1.jpg" />
+    <Content Include="simple life\images\widgets\instagram\1.jpg" />
+    <Content Include="simple life\images\widgets\instagram\2.jpg" />
+    <Content Include="simple life\images\widgets\instagram\3.jpg" />
+    <Content Include="simple life\images\widgets\instagram\4.jpg" />
+    <Content Include="simple life\images\widgets\instagram\5.jpg" />
+    <Content Include="simple life\images\widgets\instagram\6.jpg" />
+    <Content Include="simple life\images\widgets\instagram\7.jpg" />
+    <Content Include="simple life\images\widgets\instagram\8.jpg" />
+    <Content Include="simple life\images\widgets\instagram\9.jpg" />
+    <Content Include="simple life\images\widgets\posts\1.jpg" />
+    <Content Include="simple life\images\widgets\posts\2.jpg" />
+    <Content Include="simple life\images\widgets\posts\3.jpg" />
+    <Content Include="simple life\images\widgets\posts\4.jpg" />
+    <Content Include="simple life\index.html" />
+    <Content Include="simple life\js\libs\bootstrap.min.js" />
+    <Content Include="simple life\js\libs\jquery-1.12.4.min.js" />
+    <Content Include="simple life\js\libs\jquery-scrolltofixed-min.js" />
+    <Content Include="simple life\js\libs\jquery.justifiedGallery.min.js" />
+    <Content Include="simple life\js\libs\jquery.magnific-popup.js" />
+    <Content Include="simple life\js\libs\masonry.pkgd.js" />
+    <Content Include="simple life\js\libs\owl.carousel.js" />
+    <Content Include="simple life\js\scripts.js" />
+    <Content Include="simple life\list-1st-large.html" />
+    <Content Include="simple life\list.html" />
+    <Content Include="simple life\single.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\css\defaults.less" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\css\fonts\FontAwesome.otf" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\css\fonts\icomoon.eot" />
+    <Content Include="Content\css\fonts\icomoon.ttf" />
+    <Content Include="Content\css\fonts\icomoon.woff" />
+    <Content Include="Content\css\fonts\icomoon.woff2" />
+    <Content Include="Content\css\fonts\Notera_PersonalUseOnly.eot" />
+    <Content Include="Content\css\fonts\Notera_PersonalUseOnly.ttf" />
+    <Content Include="Content\css\fonts\Notera_PersonalUseOnly.woff" />
+    <Content Include="Content\css\fonts\Notera_PersonalUseOnly.woff2" />
+    <Content Include="Content\css\styles.less" />
+    <Content Include="Content\css\variables.less" />
+    <None Include="packages.config" />
+    <Content Include="simple life\.idea\simple life.iml" />
+    <Content Include="simple life\css\defaults.less" />
+    <Content Include="simple life\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="simple life\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="simple life\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="simple life\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="simple life\css\fonts\FontAwesome.otf" />
+    <Content Include="simple life\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="simple life\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="simple life\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="simple life\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="simple life\css\fonts\icomoon.eot" />
+    <Content Include="simple life\css\fonts\icomoon.ttf" />
+    <Content Include="simple life\css\fonts\icomoon.woff" />
+    <Content Include="simple life\css\fonts\icomoon.woff2" />
+    <Content Include="simple life\css\fonts\Notera_PersonalUseOnly.eot" />
+    <Content Include="simple life\css\fonts\Notera_PersonalUseOnly.ttf" />
+    <Content Include="simple life\css\fonts\Notera_PersonalUseOnly.woff" />
+    <Content Include="simple life\css\fonts\Notera_PersonalUseOnly.woff2" />
+    <Content Include="simple life\css\styles.less" />
+    <Content Include="simple life\css\variables.less" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <None Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\_RightSideBar.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="simple life\.idea\inspectionProfiles\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56114</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56114/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

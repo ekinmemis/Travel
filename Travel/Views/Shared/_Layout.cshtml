@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Gezi Dolu - Exquisite Blog Template</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,700|Adamina' type='text/css' media='all' />
+
+    <link rel="stylesheet" type="text/css" href="~/content/css/libs/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/content/css/libs/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/content/css/libs/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="~/content/css/libs/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/content/css/libs/magnific-popup.css">
+    @*<link rel="stylesheet" href="~/content/css/libs/icomoon.css">*@
+    <link rel="stylesheet" type="text/css" href="~/content/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header header-v3">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="">
+                <img src="~/content/images/logo.png" alt="Gezi Dolu">
+            </a>
+        </div>
+        <!-- End Logo -->
+
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <!-- Mobile -->
+                    <div class="menu-mobile">
+                        <span class="item item-1"></span>
+                        <span class="item item-2"></span>
+                        <span class="item item-3"></span>
+                    </div>
+                    <!-- End Mobile -->
+                    <!-- Navigation -->
+                    <nav class="navigation">
+                        <ul class="menu-list">
+                            <li class="menu-item menu-item-has-children">
+                                <a href="@Url.Action("Index","Home")">Ana Sayfa</a>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="">Kategoriler</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="">Kategori - 1</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="">Kategori - 2</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="">Kategori - 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="@Url.Action("About","Home")">Hakkımızda</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="@Url.Action("Contact","Home")">İletişim</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End Navigation -->
+                    <!-- Header Right -->
+                    <div class="header-right pull-right">
+                        <div class="socials">
+                            <a href="" title="Behance">
+                                <i class="fa fa-behance"></i>
+                            </a>
+                            <a href="" title="Dribbble">
+                                <i class="fa fa-dribbble"></i>
+                            </a>
+                            <a href="" title="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="" title="Google Plus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="https://www.instagram.com/muratjpeg/" title="Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="search">
+                            <i class="fa fa-search"></i>
+                            <div class="box-search">
+                                <form class="search-form" action="#" method="get">
+                                    <input type="search" class="search-field" placeholder="Search ..." value="" title="Search" name="s">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Header Right -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- Main Content -->
+    @RenderBody()
+    <!-- End Main Content -->
+    <!-- Footer -->
+    <footer id="footer" class="footer v3">
+        <div class="footer-widgets" style="background: url(/content/images/footer/background.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="widgets-left">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12">
+                                    <!-- Widget Menu -->
+                                    <div class="widget widget_nav_menu">
+                                        <h3 class="widget-title">Life Style</h3>
+                                        <ul class="menu">
+                                            <li class="menu-item"><a href="">Diy</a></li>
+                                            <li class="menu-item"><a href="">Outfits</a></li>
+                                            <li class="menu-item"><a href="">Sewing</a></li>
+                                            <li class="menu-item"><a href="">Gym &#038; Heal</a></li>
+                                            <li class="menu-item"><a href="">Hair</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Widget Menu -->
+                                </div>
+
+                                <div class="col-md-4 col-sm-12">
+                                    <!-- Widget Menu -->
+                                    <div class="widget widget_nav_menu">
+                                        <h3 class="widget-title">Food</h3>
+                                        <ul class="menu">
+                                            <li class="menu-item"><a href="">How to cook?</a></li>
+                                            <li class="menu-item"><a href="">Food For Dinner</a></li>
+                                            <li class="menu-item"><a href="">Tip For Kitchen</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Widget Menu -->
+                                </div>
+
+                                <div class="col-md-4 col-sm-12">
+                                    <!-- Widget Menu -->
+                                    <div class="widget widget_nav_menu">
+                                        <h3 class="widget-title">Useful Links</h3>
+                                        <ul class="menu">
+                                            <li class="menu-item"><a href="">Guides</a></li>
+                                            <li class="menu-item"><a href="">Perfecly Packed</a></li>
+                                            <li class="menu-item"><a href="">Traditional Crafts</a></li>
+                                            <li class="menu-item"><a href="">Travel Tip</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Widget Menu -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="widgets-right">
+                            <div class="row">
+
+                                <div class="col-md-6 col-sm-12">
+                                    <!-- Twitter -->
+                                    <div class="widget kd-twitter">
+                                        <h3 class="widget-title">Recent Tweets</h3>
+                                        <div class="widget-tweet-content">
+                                            <div class="item">
+                                                <i class="fa fa-twitter"></i>
+                                                <div class="widget-item-content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="fa fa-twitter"></i>
+                                                <div class="widget-item-content">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Twitter -->
+                                </div>
+
+                                <div class="col-md-6 cod-sm-12">
+                                    <div class="widget kd-instagram kd-images">
+                                        <h2 class="widget-title">Gezi Dolu Instagram</h2>
+                                        <div class="kd-content">
+                                            <div class="item">
+                                                <a href="">
+                                                    <img src="~/content/images/widgets/instagram/1.jpg" alt="Instagram Feed" />
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="">
+                                                    <img src="~/content/images/widgets/instagram/2.jpg" alt="Instagram Feed" />
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="">
+                                                    <img src="~/content/images/widgets/instagram/3.jpg" alt="Instagram Feed" />
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="">
+                                                    <img src="~/content/images/widgets/instagram/4.jpg" alt="Instagram Feed" />
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="">
+                                                    <img src="~/content/images/widgets/instagram/5.jpg" alt="Instagram Feed" />
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="">
+                                                    <img src="~/content/images/widgets/instagram/6.jpg" alt="Instagram Feed" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="copyright-text">
+                            Designed by <a href="https://www.instagram.com/muratjpeg/">Murat Celik</a> <i class="fa fa-heart"></i> developed by <a href="https://www.linkedin.com/in/ekin-memi%C5%9F-4b61031a4/">Ekin Memis</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="socials">
+                            <a href="" title="Behance">
+                                <i class="fa fa-behance"></i>
+                            </a>
+                            <a href="" title="Dribbble">
+                                <i class="fa fa-dribbble"></i>
+                            </a>
+                            <a href="" title="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="" title="Google Plus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="" title="Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Scripts -->
+    <script type="text/javascript" src="~/content/js/libs/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/content/js/libs/jquery.justifiedGallery.min.js"></script>
+    <script type="text/javascript" src="~/content/js/libs/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="~/content/js/libs/masonry.pkgd.js"></script>
+    <script type="text/javascript" src="~/content/js/libs/owl.carousel.js"></script>
+    <script type="text/javascript" src="~/content/js/libs/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="~/content/js/scripts.js"></script>
+    <!-- End Scripts -->
+</body>
+
+
+</html>
