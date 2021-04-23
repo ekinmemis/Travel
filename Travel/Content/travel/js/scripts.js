@@ -78,7 +78,7 @@
 				margin: 30,
 				loop: true,
 				nav: true,
-				navText: ['<i class="icon-arrow-point-to-right">>></i>', '<i class="icon-arrow-point-to-right">>></i>'],
+				navText: ['<i class="icon-arrow-point-to-right"></i>', '<i class="icon-arrow-point-to-right"></i>'],
 				onInitialized: function () {
 					var $image = $('.image', $featured2).eq(0),
 						height = $image.css('padding-top');
