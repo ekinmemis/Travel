@@ -5,8 +5,6 @@
     /// </summary>
     public partial class BaseEntity
     {
-        #region Properties
-
         /// <summary>
         /// Gets or sets the Id.
         /// </summary>
@@ -17,6 +15,9 @@
         /// </summary>
         public bool IsActive { get; set; }
 
-        #endregion
+        /// <summary>
+        /// Gets or sets a value indicating whether Deleted.
+        /// </summary>
+        public bool Deleted { get; set; }
     }
 }

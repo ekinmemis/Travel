@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Gezidolu</title>
 
+
     <!-- Global stylesheets -->
     <link href="~/content/limitless/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
     <link href="~/content/limitless/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -39,7 +40,10 @@
     <script src="~/content/limitless/global_assets/js/demo_charts/pages/dashboard/light/pies.js"></script>
     <script src="~/content/limitless/global_assets/js/demo_charts/pages/dashboard/light/bullets.js"></script>
     <!-- /theme JS files -->
-
+    <!--DataTables CDN-->
+    <link href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <!--/dataTables CDN-->
 </head>
 
 <body>
@@ -70,7 +74,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                 
+
 
                     <div class="dropdown-menu dropdown-content wmin-md-350">
                         <div class="dropdown-content-header">
@@ -184,17 +188,13 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="nav-item nav-item-submenu">
-                            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Layouts</span></a>
-
-                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                                <li class="nav-item"><a href="index.html" class="nav-link active">Default layout</a></li>
-                                <li class="nav-item"><a href="http://demo.interface.club/limitless/demo/Template/layout_2/LTR/default/full/index.html" class="nav-link">Layout 2</a></li>
-                                <li class="nav-item"><a href="http://demo.interface.club/limitless/demo/Template/layout_3/LTR/default/full/index.html" class="nav-link">Layout 3</a></li>
-                                <li class="nav-item"><a href="http://demo.interface.club/limitless/demo/Template/layout_4/LTR/default/full/index.html" class="nav-link">Layout 4</a></li>
-                                <li class="nav-item"><a href="http://demo.interface.club/limitless/demo/Template/layout_5/LTR/default/full/index.html" class="nav-link">Layout 5</a></li>
-                                <li class="nav-item"><a href="http://demo.interface.club/limitless/demo/Template/layout_6/LTR/default/full/index.html" class="nav-link disabled">Layout 6 <span class="badge bg-transparent align-self-center ml-auto">Coming soon</span></a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a href="@Url.Action("List","About")" class="nav-link">
+                                <i class="icon-info22"></i>
+                                <span>
+                                    Hakkımızda
+                                </span>
+                            </a>
                         </li>
                         <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Themes</span></a>
@@ -922,7 +922,7 @@
 
     </div>
     <!-- /page content -->
-
+  
 </body>
 
 <!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Mar 2021 18:46:05 GMT -->

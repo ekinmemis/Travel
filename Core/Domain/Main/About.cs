@@ -7,12 +7,15 @@ namespace Core.Domain.Main
     /// </summary>
     public partial class About : BaseEntity
     {
-        #region Properties
-
         /// <summary>
         /// Gets or sets the Image.
         /// </summary>
         public string Image { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ShortDefinition.
+        /// </summary>
+        public string ShortDefinition { get; set; }
 
         /// <summary>
         /// Gets or sets the Definition.
@@ -24,9 +27,14 @@ namespace Core.Domain.Main
         /// </summary>
         public string Title { get; set; }
 
+        /// <summary>
+        /// Gets or sets the CreateDate.
+        /// </summary>
         public DateTime CreateDate { get; set; }
 
+        /// <summary>
+        /// Gets or sets the Note.
+        /// </summary>
         public string Note { get; set; }
-        #endregion
     }
 }

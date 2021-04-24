@@ -13,6 +13,15 @@ namespace Data.EfRepository
     /// <typeparam name="TEntity">.</typeparam>
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
     {
+        #region Fields
+
+        /// <summary>
+        /// Defines the _entities.
+        /// </summary>
+        private DbSet<TEntity> _entities;
+
+        #endregion
+
         #region Methods
 
         /// <summary>
@@ -29,11 +38,6 @@ namespace Data.EfRepository
         }
 
         /// <summary>
-        /// Defines the _entities.
-        /// </summary>
-        private DbSet<TEntity> _entities;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="Repository{TEntity}"/> class.
         /// </summary>
         /// <param name="context">The context<see cref="DbContext"/>.</param>
@@ -48,7 +52,7 @@ namespace Data.EfRepository
         /// <returns>The <see cref="IEnumerable{TEntity}"/>.</returns>
         public IEnumerable<TEntity> GetAll()
         {
-            return _entities.ToList();
+            return Entities.ToList();
         }
 
         /// <summary>
@@ -61,7 +65,7 @@ namespace Data.EfRepository
             if (id == 0)
                 throw new ArgumentNullException(nameof(id));
 
-            return _entities.Find(id);
+            return Entities.Find(id);
         }
 
         /// <summary>
@@ -74,7 +78,7 @@ namespace Data.EfRepository
                 throw new ArgumentNullException(nameof(entity));
 
             //  _context.Add(entity);
-            _entities.Add(entity);
+            Entities.Add(entity);
             _context.SaveChanges();
         }
 
@@ -87,7 +91,7 @@ namespace Data.EfRepository
             if (entities == null)
                 throw new ArgumentNullException(nameof(entities));
 
-            _entities.AddRange(entities);
+            Entities.AddRange(entities);
             _context.SaveChanges();
         }
 
@@ -113,7 +117,7 @@ namespace Data.EfRepository
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
 
-            _entities.Remove(entity);
+            Entities.Remove(entity);
             _context.SaveChanges();
         }
 
@@ -126,7 +130,7 @@ namespace Data.EfRepository
             if (entities == null)
                 throw new ArgumentNullException(nameof(entities));
 
-            _entities.RemoveRange(entities);
+            Entities.RemoveRange(entities);
             _context.SaveChanges();
         }
 
@@ -136,7 +140,7 @@ namespace Data.EfRepository
         /// <returns>The <see cref="Task{IEnumerable{TEntity}}"/>.</returns>
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await _entities.ToListAsync();
+            return await Entities.ToListAsync();
         }
 
         /// <summary>
@@ -149,7 +153,7 @@ namespace Data.EfRepository
             if (id == 0)
                 throw new ArgumentNullException(nameof(id));
 
-            return await _entities.FindAsync(id);
+            return await Entities.FindAsync(id);
         }
 
         /// <summary>
@@ -176,7 +180,7 @@ namespace Data.EfRepository
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
 
-            _entities.Remove(entity);
+            Entities.Remove(entity);
             await _context.SaveChangesAsync();
         }
 

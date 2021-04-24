@@ -84,6 +84,11 @@ namespace Services.AboutServices
         {
             _aboutRepository.Update(about);
         }
+
+        public About GetActiveAbout()
+        {
+            return _aboutRepository.Table.ToList().LastOrDefault(f => f.IsActive == true);
+        }
         #endregion
     }
 }

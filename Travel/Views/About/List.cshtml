@@ -1,0 +1,135 @@
+﻿@model Travel.Models.About.AboutListModel
+
+@{ ViewBag.Title = "List";
+
+    Layout = "~/views/shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+            <div class="d-flex">
+                <div class="breadcrumb">
+                    <a href="@Url.Action("List","About")" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                    <span class="breadcrumb-item active">Dashboard</span>
+                </div>
+
+                <a href="@Url.Action("List","About")" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+
+             
+        </div>
+    </div>
+    <!-- /page header -->
+    <!-- Content area -->
+    <div class="content">
+
+        <div class="card">
+            <div class="card-header bg-white header-elements-sm-inline">
+                <h6 class="card-title"> Hakkımızda Listesi </h6>
+                <div class="header-elements">
+                    <a href="@Url.Action("Create","About")" name="save" class="btn bg-blue"><i class="icon-floppy-disk mr-1"></i> Yeni Ekle </a>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.SearchString, htmlAttributes: new { @class = "col-form-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.SearchString, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SearchString, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <div class="col-md-2 offset-5">
+                                <button id="btnSearch" class="btn btn-primary"> <i class="icon-search4"></i> Arama </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <table id="myTable" class="cell-border" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>Baslik</th>
+                        <th>Ekleme Tarihi</th>
+                        <th>Aktif mi?</th>
+                        <th>Düzenle</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- /content area -->
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#myTable').DataTable({
+            "processing": false,                       // for show processing bar
+            "serverSide": true,                       // for process on server side
+            "orderMulti": false,                      // for disable multi column order
+            "dom": '<"top"i>rt<"bottom"lp><"clear">', // for hide default global search box
+            "ordering": false,
+            "ajax": {
+                "url": "@Url.Action("List", "About")",
+                "type": "POST",
+                "datatype": "json",
+            },
+            "columns": [
+                { "data": "Title", "name": "Title", "autoWidth": true },
+                {
+                    "data": "CreateDate", "name": "CreateDate", "autoWidth": true,
+                    "mRender": function (data, type, full)
+                    {
+                        console.log(data);
+                        var dtStart = new Date(parseInt(data.substr(6)));
+                        var dtStartWrapper = moment(dtStart);
+                        return dtStartWrapper.format('DD/MM/YYYY');
+                    }
+                },
+                {
+                    "data": "IsActive", "name": "IsActive", "autoWidth": true, "render": function (data, type, row) {
+                        return (row[5] = "true") ?
+                            "Evet" : "Hayır";
+                    } },
+                {
+                    "render": function (data, type, full, meta)
+                    {
+                        return '<a class="Edit" href="/About/Edit/' + full.Id + '">Düzenle</a>';
+                    }
+                },
+            ]
+        });
+        $('#btnSearch').click(function () {
+            //Apply Custom search on jQuery DataTables here
+            oTable = $('#myTable').DataTable();
+            var searchValue = {
+                SearchName: $("#@Html.IdFor(model => model.SearchString)").val(),
+            };
+            var blkstr = [];
+            $.each(searchValue, function(idx2,val2) {
+              var str = idx2 + ":" + val2;
+              blkstr.push(str);
+            });
+            //Apply search for
+            oTable.search(blkstr);
+            //hit search on server
+            oTable.draw();
+        });
+    });
+</script>

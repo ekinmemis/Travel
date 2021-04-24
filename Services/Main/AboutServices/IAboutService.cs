@@ -17,7 +17,7 @@ namespace Services.AboutServices
         /// <param name="pageIndex">The pageIndex<see cref="int"/>.</param>
         /// <param name="pageSize">The pageSize<see cref="int"/>.</param>
         /// <returns>The <see cref="IPagedList{About}"/>.</returns>
-        IPagedList<About> GetAllAbout(string title = "", int pageIndex = 0, int pageSize = int.MaxValue);
+        IPagedList<About> GetAllAbout(string title = "", int pageIndex = 1, int pageSize = int.MaxValue);
 
         /// <summary>
         /// The GetAboutById.
@@ -43,6 +43,8 @@ namespace Services.AboutServices
         /// </summary>
         /// <param name="id">The id<see cref="int"/>.</param>
         void Delete(int id);
+
+        About GetActiveAbout();
 
         #endregion
     }
