@@ -22,7 +22,6 @@ namespace Travel.Controllers
             return RedirectToAction("List");
         }
 
-
         public ActionResult List()
         {
             return View(new AboutListModel());
@@ -32,7 +31,7 @@ namespace Travel.Controllers
         public ActionResult List(AboutListModel model)
         {
             var abouts = _aboutService.GetAllAbout(
-                title: model.SearchString,
+                title: model.SearchName,
                 pageIndex: model.PageIndex,
                 pageSize: model.PageSize);
 
@@ -69,7 +68,7 @@ namespace Travel.Controllers
                     Definition = model.Definition,
                     ShortDefinition = model.ShortDefinition,
                     Image = image.FileName,
-                    IsActive = true,
+                    IsActive = model.IsActive,
                     Note = model.Note,
                     Title = model.Title
                 };
@@ -94,7 +93,7 @@ namespace Travel.Controllers
                 Definition = about.Definition,
                 ShortDefinition = about.ShortDefinition,
                 Image = about.Image,
-                IsActive = true,
+                IsActive = about.IsActive,
                 Note = about.Note,
                 Title = about.Title
             };
@@ -103,7 +102,7 @@ namespace Travel.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(AboutModel model)
+        public ActionResult Edit(AboutModel model, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
@@ -111,26 +110,29 @@ namespace Travel.Controllers
 
                 if (about == null || about.Deleted)
                     return RedirectToAction("List");
+                if (image != null)
+                {
+                    string imagee = Path.GetFileName(image.FileName);
+                    string path = "~/Content/travel/images/" + imagee;
+                    Request.Files[0].SaveAs(Server.MapPath(path));
+                    about.Image = image.FileName;
+                }
 
                 about.Id = model.Id;
                 about.CreateDate = model.CreateDate;
                 about.Definition = model.Definition;
                 about.ShortDefinition = model.ShortDefinition;
-                about.Image = model.Image;
-                about.IsActive = true;
+                about.IsActive = model.IsActive;
                 about.Note = model.Note;
                 about.Title = model.Title;
 
                 _aboutService.Update(about);
-
-                if (string.IsNullOrEmpty(Request["save"]))
-                    return RedirectToAction("List");
             }
 
             return RedirectToAction("List");
         }
 
-        [HttpPost]
+        
         public ActionResult Delete(int id)
         {
             var about = _aboutService.GetAboutById(id);
@@ -142,7 +144,7 @@ namespace Travel.Controllers
 
             _aboutService.Update(about);
 
-            return Json("OK");
+            return Json("OK",JsonRequestBehavior.AllowGet);
         }
     }
 }

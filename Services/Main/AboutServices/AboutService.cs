@@ -39,7 +39,7 @@ namespace Services.AboutServices
             if (!string.IsNullOrEmpty(title))
                 query = query.Where(a => a.Title.Contains(title));
 
-            query = query.OrderBy(o => o.Id);
+            query = query.Where(x => x.Deleted == false).OrderBy(o => o.Id);
 
             var abouts = new PagedList<About>(query, pageIndex, pageSize);
 

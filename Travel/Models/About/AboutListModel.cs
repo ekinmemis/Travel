@@ -6,8 +6,8 @@
     public class AboutListModel : DataTableRequestModel
     {
         /// <summary>
-        /// Gets or sets the SearchString.
+        /// Gets or sets the SearchName
         /// </summary>
-        public string SearchString { get; set; }
+        public string SearchName { get; set; }
     }
 }

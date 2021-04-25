@@ -29,9 +29,7 @@ namespace Travel.Infrastructure
 
                 if (!string.IsNullOrEmpty(searchValue[0]))
                 {
-                    var searchValues = searchValue[0].Split(',');
-
-                    foreach (var searchItem in searchValues)
+                    foreach (var searchItem in searchValue)
                     {
                         var searchValueItem = searchItem.Split(':');
                         model.GetType().GetProperty(searchValueItem[0]).SetValue(model, searchValueItem[1]);
