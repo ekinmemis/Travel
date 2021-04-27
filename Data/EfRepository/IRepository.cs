@@ -11,8 +11,6 @@ namespace Data.EfRepository
     /// <typeparam name="TEntity">.</typeparam>
     public interface IRepository<TEntity> where TEntity : BaseEntity
     {
-        #region Methods
-
         /// <summary>
         /// The GetAll.
         /// </summary>
@@ -92,7 +90,5 @@ namespace Data.EfRepository
         /// Gets the TableNoTracking.
         /// </summary>
         IQueryable<TEntity> TableNoTracking { get; }
-
-        #endregion
     }
 }

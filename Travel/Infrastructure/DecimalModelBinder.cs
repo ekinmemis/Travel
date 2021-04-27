@@ -4,8 +4,17 @@ using System.Web.Mvc;
 
 namespace Travel.Infrastructure
 {
+    /// <summary>
+    /// Defines the <see cref="DecimalModelBinder" />.
+    /// </summary>
     public class DecimalModelBinder : IModelBinder
     {
+        /// <summary>
+        /// The BindModel.
+        /// </summary>
+        /// <param name="controllerContext">The controllerContext<see cref="ControllerContext"/>.</param>
+        /// <param name="bindingContext">The bindingContext<see cref="ModelBindingContext"/>.</param>
+        /// <returns>The <see cref="object"/>.</returns>
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
             ValueProviderResult valueResult = bindingContext.ValueProvider.GetValue(bindingContext.ModelName);

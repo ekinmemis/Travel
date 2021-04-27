@@ -10,21 +10,19 @@ namespace Services.AboutServices
     /// </summary>
     public class AboutService : IAboutService
     {
-        #region Fields
         /// <summary>
         /// Defines the _aboutRepository.
         /// </summary>
         private readonly IRepository<About> _aboutRepository;
-        #endregion
 
-        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AboutService"/> class.
+        /// </summary>
         public AboutService()
         {
             _aboutRepository = new Repository<About>();
         }
-        #endregion
 
-        #region Methods
         /// <summary>
         /// The GetAllAbout.
         /// </summary>
@@ -34,7 +32,7 @@ namespace Services.AboutServices
         /// <returns>The <see cref="IPagedList{About}"/>.</returns>
         public IPagedList<About> GetAllAbout(string title = "", int pageIndex = 0, int pageSize = int.MaxValue)
         {
-            var query = _aboutRepository.Table;
+            var query = _aboutRepository.Table.Where(f => f.Deleted != true);
 
             if (!string.IsNullOrEmpty(title))
                 query = query.Where(a => a.Title.Contains(title));
@@ -85,10 +83,13 @@ namespace Services.AboutServices
             _aboutRepository.Update(about);
         }
 
+        /// <summary>
+        /// The GetActiveAbout.
+        /// </summary>
+        /// <returns>The <see cref="About"/>.</returns>
         public About GetActiveAbout()
         {
             return _aboutRepository.Table.ToList().LastOrDefault(f => f.IsActive == true);
         }
-        #endregion
     }
 }

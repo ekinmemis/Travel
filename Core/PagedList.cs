@@ -11,8 +11,6 @@ namespace Core
     [Serializable]
     public partial class PagedList<TEntity> : List<TEntity>, IPagedList<TEntity>
     {
-        #region Constructor
-
         /// <summary>
         /// Initializes a new instance of the <see cref="PagedList{TEntity}"/> class.
         /// </summary>
@@ -78,10 +76,6 @@ namespace Core
             AddRange(source);
         }
 
-        #endregion
-
-        #region Properties
-
         /// <summary>
         /// Gets the PageIndex.
         /// </summary>
@@ -111,7 +105,5 @@ namespace Core
         /// Gets a value indicating whether HasNextPage.
         /// </summary>
         public bool HasNextPage => PageIndex + 1 < TotalPages;
-
-        #endregion
     }
 }

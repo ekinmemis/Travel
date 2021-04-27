@@ -10,21 +10,18 @@ namespace Services.CategoryServices
     /// </summary>
     public class CategoryService : ICategoryService
     {
-        #region Fields
         /// <summary>
         /// Defines the _categoryRepository.
         /// </summary>
         private readonly IRepository<Category> _categoryRepository;
-        #endregion
 
-        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CategoryService"/> class.
+        /// </summary>
         public CategoryService()
         {
             _categoryRepository = new Repository<Category>();
         }
-        #endregion
-
-        #region Methods
 
         /// <summary>
         /// The GetAllCategory.
@@ -35,7 +32,7 @@ namespace Services.CategoryServices
         /// <returns>The <see cref="IPagedList{Category}"/>.</returns>
         public IPagedList<Category> GetAllCategory(string title = "", int pageIndex = 0, int pageSize = int.MaxValue)
         {
-            var query = _categoryRepository.Table;
+            var query = _categoryRepository.Table.Where(f => f.Deleted != true);
 
             if (!string.IsNullOrEmpty(title))
                 query = query.Where(a => a.Title.Contains(title));
@@ -85,8 +82,5 @@ namespace Services.CategoryServices
         {
             _categoryRepository.Update(category);
         }
-
-        #endregion
     }
 }
-

@@ -58,12 +58,14 @@
     <Compile Include="Authentication\IAutthenticationService.cs" />
     <Compile Include="CategoryServices\CategoryService.cs" />
     <Compile Include="CategoryServices\ICategoryService.cs" />
+    <Compile Include="Main\ContactService\ContactService.cs" />
+    <Compile Include="Main\ContactService\IContactService.cs" />
     <Compile Include="Main\CommentServices\CommentService.cs" />
     <Compile Include="Main\CommentServices\ICommentService.cs" />
     <Compile Include="Main\BlogServices\BlogService.cs" />
     <Compile Include="Main\BlogServices\IBlogService.cs" />
-    <Compile Include="Main\AddressServices\AddressService.cs" />
-    <Compile Include="Main\AddressServices\IAddressService.cs" />
+    <Compile Include="Main\SliderServices\SliderService.cs" />
+    <Compile Include="Main\SliderServices\ISliderService.cs" />
     <Compile Include="Main\AboutServices\AboutService.cs" />
     <Compile Include="Main\AboutServices\IAboutService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

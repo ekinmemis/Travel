@@ -8,8 +8,6 @@ namespace Services.CommentServices
     /// </summary>
     public interface ICommentService
     {
-        #region Methods
-
         /// <summary>
         /// The GetAllComments.
         /// </summary>
@@ -43,7 +41,5 @@ namespace Services.CommentServices
         /// </summary>
         /// <param name="id">The id<see cref="int"/>.</param>
         void Delete(int id);
-
-        #endregion
     }
 }

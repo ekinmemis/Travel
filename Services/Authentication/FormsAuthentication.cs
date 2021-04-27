@@ -12,8 +12,6 @@ namespace Service.Authentication
     /// </summary>
     public class FormsAuthenticationService : IAuthenticationService
     {
-        #region Fields
-
         /// <summary>
         /// Defines the _applicationUserRepository.
         /// </summary>
@@ -29,10 +27,6 @@ namespace Service.Authentication
         /// </summary>
         private ApplicationUser _appUser;
 
-        #endregion
-
-        #region Constructor
-
         /// <summary>
         /// Initializes a new instance of the <see cref="FormsAuthenticationService"/> class.
         /// </summary>
@@ -41,10 +35,6 @@ namespace Service.Authentication
             _applicationUserRepository = new Repository<ApplicationUser>();
             _httpContext = HttpContext.Current;
         }
-
-        #endregion
-
-        #region Methods
 
         /// <summary>
         /// The GetAuthenticatedApplicationUserFromTicket.
@@ -128,7 +118,5 @@ namespace Service.Authentication
 
             return _appUser;
         }
-
-        #endregion
     }
 }

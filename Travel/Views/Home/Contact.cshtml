@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Travel.Models.Contact.ContactModel
+@{
     ViewBag.Title = "İletişim";
 }
 
@@ -13,45 +14,15 @@
                     <article class="post-single page">
 
                         <!-- Title -->
-                        <h3 class="title">İletişim</h3>
+                        <h3 class="title">@Model.Title</h3>
                         <br />
                         <!-- End Title -->
                         <!-- End Post Details -->
 
                         <div class="the-excerpt">
                             <p>
-                                <em><strong>Whether you&#8217;re looking for answers, would like to solve a problem, or just want to let us know how we did, you&#8217;ll find many ways to contact us right here. </strong></em>
+                                <em><strong>@Model.Definition</strong></em>
                                 <br /><br />
-
-                                <form action="#" method="post">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="contact-item form-name">
-                                                <input type="text" name="your-name" value="" placeholder="Name *" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="contact-item form-email">
-                                                <input type="email" name="your-email" value="" placeholder="Email *" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="contact-item form-url">
-                                                <input type="text" name="your-subject" value="" placeholder="Subject" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="contact-item field-full form-message">
-                                                <textarea name="your-message" placeholder="Message *"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="contact-item form-submit">
-                                                <input type="submit" value="SEND" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
                         </div>
 
                         <!-- Contact Info-->
@@ -59,26 +30,23 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <i class="icon-phone-call"></i>
-                                    <h4 class="title">Phone Number</h4>
-                                    <p>Business Phone : +90 543 597 66 94</p>
+                                    <h4 class="title">@Model.PhoneNumberTitle</h4>
+                                    <p>@Model.PhoneNumberSubject</p>
                                 </div>
                                 <div class="col-md-4">
                                     <i class="icon-placeholder"></i>
-                                    <h4 class="title">Postal Address</h4>
+                                    <h4 class="title">@Model.PostalAdressTitle</h4>
                                     <p>
-                                        PO Box 16122 Collins Street West
-                                        Victoria 8007 Australia
+                                        @Model.PostalAddressSubject
                                     </p>
                                 </div>
                                 <div class="col-md-4">
                                     <i class="icon-phone-call"></i>
-                                    <h4 class="title">Email Address</h4>
-                                    <p><a href="mailto:info@gezidolu.com">info@gezidolu.com</a></p>
+                                    <h4 class="title">@Model.EmailAddress</h4>
+                                    <p><a href="mailto:@Model.EmailSubject">@Model.EmailSubject</a></p>
                                 </div>
                             </div>
-                        </div>
-
-                        <div id="map" data-latlong="49.282729, -123.120738"></div>
+                        </div> 
                         <!-- End Contact Info-->
                     </article>
                 </div>

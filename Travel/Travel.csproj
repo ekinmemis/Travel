@@ -820,6 +820,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SliderController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -828,6 +831,14 @@
     </Compile>
     <Compile Include="Infrastructure\CustomSearchModelBinding.cs" />
     <Compile Include="Infrastructure\DecimalModelBinder.cs" />
+    <Compile Include="Models\Slider\SliderListModel.cs" />
+    <Compile Include="Models\Slider\SliderModel.cs" />
+    <Compile Include="Models\Index\IndexListModel.cs" />
+    <Compile Include="Models\Index\IndexModel.cs" />
+    <Compile Include="Models\Category\CategoryListModel.cs" />
+    <Compile Include="Models\Category\CategoryModel.cs" />
+    <Compile Include="Models\Contact\ContactListModel.cs" />
+    <Compile Include="Models\Contact\ContactModel.cs" />
     <Compile Include="Models\About\AboutListModel.cs" />
     <Compile Include="Models\About\AboutModel.cs" />
     <Compile Include="Models\Admin\LoginModel.cs" />
@@ -885,6 +896,15 @@
     <Content Include="Views\About\Create.cshtml" />
     <Content Include="Views\About\List.cshtml" />
     <Content Include="Views\About\Edit.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Contact\Edit.cshtml" />
+    <Content Include="Views\Contact\List.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Slider\Create.cshtml" />
+    <Content Include="Views\Slider\Edit.cshtml" />
+    <Content Include="Views\Slider\List.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\_RightSideBar.cshtml" />
     <None Include="Web.Debug.config">
@@ -896,7 +916,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Abour\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

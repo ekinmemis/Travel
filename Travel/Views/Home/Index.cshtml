@@ -1,68 +1,22 @@
 ﻿@{
     ViewBag.Title = "Anasayfa";
 }
-
+@model Travel.Models.Index.IndexModel
 <!-- Featured Slider -->
 <div id="featured-slider-v2" class="slider-1-column">
     <div class="container">
         <div class="owl-carousel owl-theme">
-
-            <div class="item">
-                <div class="image" style="background-image: url(/content/travel/images/posts/3.jpg)"></div>
-                <div class="content">
-                    <h2 class="title">
-                        <a href="single.html">In daily life, people have many way to get pleasure</a>
-                    </h2>
-                    <div class="post-details">
-                        <a href="" class="post-author">Simple Life</a>
-                        <a href="" class="post-comment">0 Comment</a>
-                        <a href="" class="post-date">May 29, 2017</a>
+            @foreach (var item in Model.Sliders)
+            {
+                <div class="item">
+                    <div class="image" style="background-image: url(/content/travel/images/@item.Image)"></div>
+                    <div class="content">
+                        <h2 class="title">
+                            <a>@item.Title</a>
+                        </h2>
                     </div>
                 </div>
-            </div>
-
-            <div class="item">
-                <div class="image" style="background-image: url(/content/travel/images/posts/6.jpg)"></div>
-                <div class="content">
-                    <h2 class="title">
-                        <a href="single.html">A country with many things not yet discoverd</a>
-                    </h2>
-                    <div class="post-details">
-                        <a href="" class="post-author">Simple Life</a>
-                        <a href="" class="post-comment">0 Comment</a>
-                        <a href="" class="post-date">May 29, 2017</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="image" style="background-image: url(/content/travel/images/posts/7.jpg)"></div>
-                <div class="content">
-                    <h2 class="title">
-                        <a href="single.html">Our defeat was mainly due to our ill-discipline</a>
-                    </h2>
-                    <div class="post-details">
-                        <a href="" class="post-author">Simple Life</a>
-                        <a href="" class="post-comment">0 Comment</a>
-                        <a href="" class="post-date">May 29, 2017</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="image" style="background-image: url(/content/travel/images/posts/8.jpg)"></div>
-                <div class="content">
-                    <h2 class="title">
-                        <a href="single.html">Their happiness comes before anything else</a>
-                    </h2>
-                    <div class="post-details">
-                        <a href="" class="post-author">Simple Life</a>
-                        <a href="" class="post-comment">0 Comment</a>
-                        <a href="" class="post-date">May 29, 2017</a>
-                    </div>
-                </div>
-            </div>
-
+            }
         </div>
     </div>
 </div>
@@ -167,7 +121,7 @@
                 <!-- End Pagination -->
             </div>
 
-           @Html.Partial("_RightSideBar");
+            @Html.Partial("_RightSideBar");
         </div>
     </div>
 </div>

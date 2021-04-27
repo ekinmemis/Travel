@@ -5,8 +5,6 @@
     /// </summary>
     public partial class ApplicationUser : BaseEntity
     {
-        #region Properties
-
         /// <summary>
         /// Gets or sets the FirstName.
         /// </summary>
@@ -31,7 +29,5 @@
         /// Gets or sets the UserName.
         /// </summary>
         public string UserName { get; set; }
-
-        #endregion
     }
 }

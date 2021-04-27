@@ -8,8 +8,6 @@ namespace Core
     /// <typeparam name="TEntity">.</typeparam>
     public interface IPagedList<TEntity> : IList<TEntity>
     {
-        #region Properties
-       
         /// <summary>
         /// Gets the PageIndex.
         /// </summary>
@@ -31,15 +29,15 @@ namespace Core
         int TotalPages { get; }
 
         /// <summary>
-        /// Gets a value indicating whether HasPreviousPage.
+        /// Gets the HasPreviousPage
+        /// Gets a value indicating whether HasPreviousPage...
         /// </summary>
         bool HasPreviousPage { get; }
 
         /// <summary>
-        /// Gets a value indicating whether HasNextPage.
+        /// Gets the HasNextPage
+        /// Gets a value indicating whether HasNextPage...
         /// </summary>
         bool HasNextPage { get; }
-
-        #endregion
     }
 }

@@ -55,7 +55,7 @@
     <Compile Include="Domain\ApplicationUsers\ApplicationUser.cs" />
     <Compile Include="Domain\Categories\Category.cs" />
     <Compile Include="Domain\Main\About.cs" />
-    <Compile Include="Domain\Main\Address.cs" />
+    <Compile Include="Domain\Main\Slider.cs" />
     <Compile Include="Domain\Main\Blog.cs" />
     <Compile Include="Domain\Main\Comment.cs" />
     <Compile Include="Domain\Main\Contact.cs" />

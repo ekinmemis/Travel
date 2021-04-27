@@ -7,8 +7,6 @@ namespace Core.Domain.Main
     /// </summary>
     public partial class Comment : BaseEntity
     {
-        #region Properties
-
         /// <summary>
         /// Gets or sets the CreateDate.
         /// </summary>
@@ -29,11 +27,6 @@ namespace Core.Domain.Main
         /// </summary>
         public string Subject { get; set; }
 
-
-        #endregion
-
-        #region Properties
-        
         /// <summary>
         /// Gets or sets the BlogId.
         /// </summary>
@@ -43,9 +36,5 @@ namespace Core.Domain.Main
         /// Gets or sets the Blog.
         /// </summary>
         public Blog Blog { get; set; }
-
-        #endregion
-
-
     }
 }

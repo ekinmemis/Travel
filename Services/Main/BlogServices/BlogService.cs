@@ -10,21 +10,19 @@ namespace Services.BlogServices
     /// </summary>
     public class BlogService : IBlogService
     {
-        #region Fields
         /// <summary>
         /// Defines the _blogRepository.
         /// </summary>
         private readonly IRepository<Blog> _blogRepository;
-        #endregion
 
-        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BlogService"/> class.
+        /// </summary>
         public BlogService()
         {
             _blogRepository = new Repository<Blog>();
         }
-        #endregion
 
-        #region Methods
         /// <summary>
         /// The Delete.
         /// </summary>
@@ -45,7 +43,7 @@ namespace Services.BlogServices
         /// <returns>The <see cref="IPagedList{Blog}"/>.</returns>
         public IPagedList<Blog> GetAllBlogs(string title = "", int pageIndex = 0, int pageSize = int.MaxValue)
         {
-            var query = _blogRepository.Table;
+            var query = _blogRepository.Table.Where(f => f.Deleted != true);
 
             if (!string.IsNullOrEmpty(title))
                 query = query.Where(a => a.Title.Contains(title));
@@ -84,9 +82,5 @@ namespace Services.BlogServices
         {
             _blogRepository.Update(blog);
         }
-        #endregion
-
-
-
     }
 }

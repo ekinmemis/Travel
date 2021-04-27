@@ -9,8 +9,6 @@ namespace Core.Domain.Main
     /// </summary>
     public partial class Blog : BaseEntity
     {
-        #region Properties
-
         /// <summary>
         /// Gets or sets the CreateDate.
         /// </summary>
@@ -41,10 +39,6 @@ namespace Core.Domain.Main
         /// </summary>
         public string Title { get; set; }
 
-        #endregion
-
-        #region Navigation Properties
-        
         /// <summary>
         /// Gets or sets the Comments.
         /// </summary>
@@ -59,10 +53,5 @@ namespace Core.Domain.Main
         /// Gets or sets the Category.
         /// </summary>
         public Category Category { get; set; }
-
-
-        #endregion
-
-
     }
 }

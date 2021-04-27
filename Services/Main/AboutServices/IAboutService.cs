@@ -8,8 +8,6 @@ namespace Services.AboutServices
     /// </summary>
     public interface IAboutService
     {
-        #region Methods
-
         /// <summary>
         /// The GetAllAbout.
         /// </summary>
@@ -44,8 +42,10 @@ namespace Services.AboutServices
         /// <param name="id">The id<see cref="int"/>.</param>
         void Delete(int id);
 
+        /// <summary>
+        /// The GetActiveAbout.
+        /// </summary>
+        /// <returns>The <see cref="About"/>.</returns>
         About GetActiveAbout();
-
-        #endregion
     }
 }

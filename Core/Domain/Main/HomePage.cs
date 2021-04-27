@@ -5,8 +5,6 @@
     /// </summary>
     public partial class HomePage : BaseEntity
     {
-        #region Properties
-
         /// <summary>
         /// Gets or sets the Definition.
         /// </summary>
@@ -26,7 +24,5 @@
         /// Gets or sets the Title.
         /// </summary>
         public string Title { get; set; }
-
-        #endregion
     }
 }

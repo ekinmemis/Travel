@@ -1,18 +1,29 @@
-﻿using Ninject;
-using Service.Authentication;
+﻿using Service.Authentication;
 using Services.ApplicationUserServices;
-using System.Reflection;
 using System.Web.Mvc;
 using Travel.Models.Admin;
 
 namespace Travel.Controllers
 {
+    /// <summary>
+    /// Defines the <see cref="AdminController" />.
+    /// </summary>
     [Authorize]
     public class AdminController : Controller
     {
+        /// <summary>
+        /// Defines the _formsAuthenticationService.
+        /// </summary>
         private readonly IAuthenticationService _formsAuthenticationService;
+
+        /// <summary>
+        /// Defines the _applicationUserService.
+        /// </summary>
         private readonly IApplicationUserService _applicationUserService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdminController"/> class.
+        /// </summary>
         public AdminController()
         {
             _formsAuthenticationService = new FormsAuthenticationService();
@@ -20,18 +31,31 @@ namespace Travel.Controllers
         }
 
         // GET: Admin
+        /// <summary>
+        /// The Index.
+        /// </summary>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         [AllowAnonymous]
         public ActionResult Index()
         {
             return RedirectToAction("Login");
         }
 
+        /// <summary>
+        /// The Login.
+        /// </summary>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
+        /// <summary>
+        /// The Login.
+        /// </summary>
+        /// <param name="model">The model<see cref="LoginModel"/>.</param>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -61,11 +85,19 @@ namespace Travel.Controllers
             return View();
         }
 
+        /// <summary>
+        /// The Content.
+        /// </summary>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Content()
         {
             return View();
         }
 
+        /// <summary>
+        /// The Logout.
+        /// </summary>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Logout()
         {
             _formsAuthenticationService.SignOut();

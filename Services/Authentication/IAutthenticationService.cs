@@ -7,8 +7,6 @@ namespace Service.Authentication
     /// </summary>
     public interface IAuthenticationService
     {
-        #region Methods
-
         /// <summary>
         /// The SignIn.
         /// </summary>
@@ -26,7 +24,5 @@ namespace Service.Authentication
         /// </summary>
         /// <returns>The <see cref="ApplicationUser"/>.</returns>
         ApplicationUser GetAuthenticatedApplicationUser();
-
-        #endregion
     }
 }

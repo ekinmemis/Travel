@@ -7,26 +7,47 @@ using Travel.Models.About;
 
 namespace Travel.Controllers
 {
+    /// <summary>
+    /// Defines the <see cref="AboutController" />.
+    /// </summary>
     public class AboutController : Controller
     {
-        // GET: Abour
+        /// <summary>
+        /// Defines the _aboutService.
+        /// </summary>
         private readonly IAboutService _aboutService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AboutController"/> class.
+        /// </summary>
         public AboutController()
         {
             _aboutService = new AboutService();
         }
 
+        /// <summary>
+        /// The Index.
+        /// </summary>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Index()
         {
             return RedirectToAction("List");
         }
 
+        /// <summary>
+        /// The List.
+        /// </summary>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult List()
         {
             return View(new AboutListModel());
         }
 
+        /// <summary>
+        /// The List.
+        /// </summary>
+        /// <param name="model">The model<see cref="AboutListModel"/>.</param>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         [HttpPost]
         public ActionResult List(AboutListModel model)
         {
@@ -44,11 +65,21 @@ namespace Travel.Controllers
             });
         }
 
+        /// <summary>
+        /// The Create.
+        /// </summary>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Create()
         {
             return View(new AboutModel());
         }
 
+        /// <summary>
+        /// The Create.
+        /// </summary>
+        /// <param name="model">The model<see cref="AboutModel"/>.</param>
+        /// <param name="image">The image<see cref="HttpPostedFileBase"/>.</param>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         [HttpPost]
         public ActionResult Create(AboutModel model, HttpPostedFileBase image)
         {
@@ -79,6 +110,11 @@ namespace Travel.Controllers
             return RedirectToAction("List");
         }
 
+        /// <summary>
+        /// The Edit.
+        /// </summary>
+        /// <param name="id">The id<see cref="int"/>.</param>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Edit(int id)
         {
             var about = _aboutService.GetAboutById(id);
@@ -101,6 +137,12 @@ namespace Travel.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// The Edit.
+        /// </summary>
+        /// <param name="model">The model<see cref="AboutModel"/>.</param>
+        /// <param name="image">The image<see cref="HttpPostedFileBase"/>.</param>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         [HttpPost]
         public ActionResult Edit(AboutModel model, HttpPostedFileBase image)
         {
@@ -132,7 +174,11 @@ namespace Travel.Controllers
             return RedirectToAction("List");
         }
 
-        
+        /// <summary>
+        /// The Delete.
+        /// </summary>
+        /// <param name="id">The id<see cref="int"/>.</param>
+        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Delete(int id)
         {
             var about = _aboutService.GetAboutById(id);
@@ -144,7 +190,7 @@ namespace Travel.Controllers
 
             _aboutService.Update(about);
 
-            return Json("OK",JsonRequestBehavior.AllowGet);
+            return RedirectToAction("List");
         }
     }
 }

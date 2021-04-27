@@ -13,16 +13,10 @@ namespace Data.EfRepository
     /// <typeparam name="TEntity">.</typeparam>
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
     {
-        #region Fields
-
         /// <summary>
         /// Defines the _entities.
         /// </summary>
         private DbSet<TEntity> _entities;
-
-        #endregion
-
-        #region Methods
 
         /// <summary>
         /// Defines the _context.
@@ -184,11 +178,6 @@ namespace Data.EfRepository
             await _context.SaveChangesAsync();
         }
 
-
-        #endregion
-
-        #region Properties
-
         /// <summary>
         /// Gets the Table.
         /// </summary>
@@ -223,7 +212,5 @@ namespace Data.EfRepository
                 return _entities;
             }
         }
-
-        #endregion
     }
 }

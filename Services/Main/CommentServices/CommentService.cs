@@ -10,23 +10,19 @@ namespace Services.CommentServices
     /// </summary>
     public class CommentService : ICommentService
     {
-        #region Fields
-
         /// <summary>
         /// Defines the _commentRepository.
         /// </summary>
         private readonly IRepository<Comment> _commentRepository;
 
-        #endregion
-
-        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommentService"/> class.
+        /// </summary>
         public CommentService()
         {
             _commentRepository = new Repository<Comment>();
         }
-        #endregion
 
-        #region Methods
         /// <summary>
         /// The GetAllComments.
         /// </summary>
@@ -36,7 +32,7 @@ namespace Services.CommentServices
         /// <returns>The <see cref="IPagedList{Comment}"/>.</returns>
         public IPagedList<Comment> GetAllComments(string title = "", int pageIndex = 0, int pageSize = int.MaxValue)
         {
-            var query = _commentRepository.Table;
+            var query = _commentRepository.Table.Where(f => f.Deleted != true);
 
             if (!string.IsNullOrEmpty(title))
                 query = query.Where(a => a.Subject.Contains(title));
@@ -86,9 +82,5 @@ namespace Services.CommentServices
         {
             _commentRepository.Update(comment);
         }
-        #endregion
-
-
-
     }
 }

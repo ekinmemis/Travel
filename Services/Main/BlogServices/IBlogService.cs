@@ -8,8 +8,6 @@ namespace Services.BlogServices
     /// </summary>
     public interface IBlogService
     {
-        #region Methods
-
         /// <summary>
         /// The GetAllBlogs.
         /// </summary>
@@ -43,7 +41,5 @@ namespace Services.BlogServices
         /// </summary>
         /// <param name="id">The id<see cref="int"/>.</param>
         void Delete(int id);
-
-        #endregion
     }
 }

@@ -11,7 +11,7 @@
             <div class="d-flex">
                 <div class="breadcrumb">
                     <a href="@Url.Action("List","About")" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Hakkımızda</a>
-                    <span class="breadcrumb-item active">Güncelle</span>
+                    <span class="breadcrumb-item active">Düzenle</span>
                 </div>
 
                 <a href="@Url.Action("List","About")" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -22,11 +22,9 @@
     <!-- Content area -->
     <div class="content">
 
-
         @using (Html.BeginForm("Edit", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <div class="card">
-
                 <div class="card-header bg-white header-elements-sm-inline">
                     <h6 class="card-title"> Hakkımızda Düzenle </h6>
                     <div class="header-elements">
@@ -35,12 +33,13 @@
                 </div>
 
                 <div class="card-body">
+
                     @Html.HiddenFor(f => f.Id)
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                        <label class="col-md-2 col-form-label">Başlık</label>
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
@@ -48,17 +47,16 @@
                     </div>
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                        <label class="col-md-2 col-form-label">Oluşturulma Tarihi</label>
                         <div class="col-md-10">
-                            @*@Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })*@
-                            <input type="date" value="@Model.CreateDate.ToString("yyyy-MM-dd")" name="CreateDate" class="form-control" />
+                            <input type="date" value="@Model.CreateDate.ToString("yyyy-MM-dd")" name="CreateDate" class = "form-control"/>
                             @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.Definition, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                        <label class="col-md-2 col-form-label">İçerik</label>
                         <div class="col-md-10">
                             @Html.TextAreaFor(model => model.Definition, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.Definition, "", new { @class = "text-danger" })
@@ -66,7 +64,7 @@
                     </div>
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.ShortDefinition, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                        <label class="col-md-2 col-form-label">Kısa Açıklama</label>
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.ShortDefinition, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.ShortDefinition, "", new { @class = "text-danger" })
@@ -74,16 +72,15 @@
                     </div>
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                        <label class="col-md-2 col-form-label">Resim</label>
                         <div class="col-md-10">
-                            @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @type = "file", @class = "form-control" } })*@
                             <input type="file" name="Image" value="" class="form-control" />
                             @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                        <label class="col-md-2 col-form-label">Dipnot</label>
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
@@ -91,7 +88,8 @@
                     </div>
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                        <label class="col-md-2 col-form-label">Aktif</label>
+
                         <div class="col-md-10">
                             @Html.CheckBoxFor(model => model.IsActive, new { @class = "form-check" })
                             @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
@@ -100,7 +98,6 @@
                 </div>
             </div>
         }
-
     </div>
     <!-- /content area -->
 </div>

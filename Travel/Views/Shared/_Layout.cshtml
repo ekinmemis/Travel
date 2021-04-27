@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Services.CategoryServices
+@{
+    var service = new CategoryService();
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,15 +51,12 @@
                             <li class="menu-item menu-item-has-children">
                                 <a href="">Kategoriler</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item">
-                                        <a href="">Kategori - 1</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="">Kategori - 2</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="">Kategori - 3</a>
-                                    </li>
+                                    @foreach (var item in service.GetAllCategory())
+                                    {
+                                        <li class="menu-item">
+                                            <a href="">@item.Title</a>
+                                        </li>
+                                    }
                                 </ul>
                             </li>
                             <li class="menu-item">
