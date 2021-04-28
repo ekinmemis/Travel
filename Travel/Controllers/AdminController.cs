@@ -21,13 +21,10 @@ namespace Travel.Controllers
         /// </summary>
         private readonly IApplicationUserService _applicationUserService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AdminController"/> class.
-        /// </summary>
-        public AdminController()
+        public AdminController(IAuthenticationService formsAuthenticationService, IApplicationUserService applicationUserService)
         {
-            _formsAuthenticationService = new FormsAuthenticationService();
-            _applicationUserService = new ApplicationUserService();
+            _formsAuthenticationService = formsAuthenticationService;
+            _applicationUserService = applicationUserService;
         }
 
         // GET: Admin

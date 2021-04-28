@@ -17,12 +17,9 @@ namespace Travel.Controllers
         /// </summary>
         private readonly IContactService _contactService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContactController"/> class.
-        /// </summary>
-        public ContactController()
+        public ContactController(IContactService contactService)
         {
-            _contactService = new ContactService();
+            _contactService = contactService;
         }
 
         /// <summary>
@@ -88,7 +85,7 @@ namespace Travel.Controllers
                 var contact = new Contact
                 {
                     Id = model.Id,
-                    Title=model.Title,
+                    Title = model.Title,
                     Definition = model.Definition,
                     EmailAddress = model.EmailAddress,
                     EmailSubject = model.EmailSubject,

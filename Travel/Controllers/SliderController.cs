@@ -17,12 +17,9 @@ namespace Travel.Controllers
         /// </summary>
         private readonly ISliderService _sliderService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SliderController"/> class.
-        /// </summary>
-        public SliderController()
+        public SliderController(ISliderService sliderService)
         {
-            _sliderService = new SliderService();
+            _sliderService = sliderService;
         }
 
         /// <summary>

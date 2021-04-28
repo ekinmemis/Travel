@@ -15,6 +15,11 @@ namespace Services.CommentServices
         /// </summary>
         private readonly IRepository<Comment> _commentRepository;
 
+        public CommentService(IRepository<Comment> commentRepository)
+        {
+            _commentRepository = commentRepository;
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentService"/> class.
         /// </summary>

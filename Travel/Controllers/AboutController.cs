@@ -17,12 +17,9 @@ namespace Travel.Controllers
         /// </summary>
         private readonly IAboutService _aboutService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AboutController"/> class.
-        /// </summary>
-        public AboutController()
+        public AboutController(IAboutService aboutService)
         {
-            _aboutService = new AboutService();
+            _aboutService = aboutService;
         }
 
         /// <summary>

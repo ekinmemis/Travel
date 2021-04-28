@@ -16,12 +16,9 @@ namespace Services.SliderServices
         /// </summary>
         private readonly IRepository<Slider> _sliderRepository;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SliderService"/> class.
-        /// </summary>
-        public SliderService()
+        public SliderService(IRepository<Slider> sliderRepository)
         {
-            _sliderRepository = new Repository<Slider>();
+            _sliderRepository = sliderRepository;
         }
 
         /// <summary>
@@ -88,6 +85,10 @@ namespace Services.SliderServices
         /// The GetAll.
         /// </summary>
         /// <returns>The <see cref="List{Slider}"/>.</returns>
-        public List<Slider> GetAll() => _sliderRepository.Table.Where(f => f.Deleted != true).ToList();
+        public List<Slider> GetAll()
+        {
+            var list = _sliderRepository.Table.Where(f => f.Deleted != true).ToList();
+            return list ?? new List<Slider>();
+        }
     }
 }

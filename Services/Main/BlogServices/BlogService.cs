@@ -15,12 +15,9 @@ namespace Services.BlogServices
         /// </summary>
         private readonly IRepository<Blog> _blogRepository;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BlogService"/> class.
-        /// </summary>
-        public BlogService()
+        public BlogService(IRepository<Blog> blogRepository)
         {
-            _blogRepository = new Repository<Blog>();
+            _blogRepository = blogRepository;
         }
 
         /// <summary>

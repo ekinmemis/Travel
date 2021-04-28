@@ -15,13 +15,12 @@ namespace Services.CategoryServices
         /// </summary>
         private readonly IRepository<Category> _categoryRepository;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CategoryService"/> class.
-        /// </summary>
-        public CategoryService()
+        public CategoryService(IRepository<Category> categoryRepository)
         {
-            _categoryRepository = new Repository<Category>();
+            this._categoryRepository = categoryRepository;
         }
+
+
 
         /// <summary>
         /// The GetAllCategory.

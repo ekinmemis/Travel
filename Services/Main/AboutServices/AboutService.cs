@@ -15,12 +15,9 @@ namespace Services.AboutServices
         /// </summary>
         private readonly IRepository<About> _aboutRepository;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AboutService"/> class.
-        /// </summary>
-        public AboutService()
+        public AboutService(IRepository<About> aboutRepository)
         {
-            _aboutRepository = new Repository<About>();
+            _aboutRepository = aboutRepository;
         }
 
         /// <summary>

@@ -15,12 +15,9 @@ namespace Services.ContactServices
         /// </summary>
         private readonly IRepository<Contact> _contactRepository;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContactService"/> class.
-        /// </summary>
-        public ContactService()
+        public ContactService(IRepository<Contact> contactRepository)
         {
-            _contactRepository = new Repository<Contact>();
+            _contactRepository = contactRepository;
         }
 
         /// <summary>

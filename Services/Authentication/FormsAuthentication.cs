@@ -17,6 +17,13 @@ namespace Service.Authentication
         /// </summary>
         private readonly IRepository<ApplicationUser> _applicationUserRepository;
 
+        public FormsAuthenticationService(IRepository<ApplicationUser> applicationUserRepository, HttpContext httpContext, ApplicationUser appUser)
+        {
+            _applicationUserRepository = applicationUserRepository;
+            _httpContext = httpContext;
+            _appUser = appUser;
+        }
+
         /// <summary>
         /// Defines the _httpContext.
         /// </summary>

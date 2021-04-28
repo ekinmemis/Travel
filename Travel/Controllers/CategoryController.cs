@@ -18,12 +18,9 @@ namespace Travel.Controllers
         /// </summary>
         private readonly ICategoryService _categoryService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CategoryController"/> class.
-        /// </summary>
-        public CategoryController()
+        public CategoryController(ICategoryService categoryService)
         {
-            _categoryService = new CategoryService();
+            _categoryService = categoryService;
         }
 
         /// <summary>

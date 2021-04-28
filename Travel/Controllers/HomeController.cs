@@ -20,16 +20,11 @@ namespace Travel.Controllers
         private readonly IAboutService _aboutService;
         private readonly IContactService _contactService;
         private readonly ISliderService _sliderService;
-
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HomeController"/> class.
-        /// </summary>
-        public HomeController()
+        public HomeController(IAboutService aboutService, IContactService contactService, ISliderService sliderService)
         {
-            _aboutService = new AboutService();
-            _contactService = new ContactService();
-            _sliderService = new SliderService();
+            _aboutService = aboutService;
+            _contactService = contactService;
+            _sliderService = sliderService;
         }
 
         /// <summary>

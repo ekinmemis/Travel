@@ -16,12 +16,9 @@ namespace Services.ApplicationUserServices
         /// </summary>
         private IRepository<ApplicationUser> _applicationUserRepository;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationUserService"/> class.
-        /// </summary>
-        public ApplicationUserService()
+        public ApplicationUserService(IRepository<ApplicationUser> applicationUserRepository)
         {
-            _applicationUserRepository = new Repository<ApplicationUser>();
+            _applicationUserRepository = applicationUserRepository;
         }
 
         /// <summary>

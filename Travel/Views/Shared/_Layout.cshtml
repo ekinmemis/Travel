@@ -1,6 +1,8 @@
 ﻿@using Services.CategoryServices
+@using Data.EfRepository
+@using Core.Domain.Categories
 @{
-    var service = new CategoryService();
+    var service = new CategoryService(new Repository<Category>());
 }
 <!DOCTYPE html>
 <html lang="en">
