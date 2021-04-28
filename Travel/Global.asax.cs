@@ -13,6 +13,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Travel.Configurations;
 using Travel.Controllers;
 using Travel.Infrastructure;
 using static Travel.Infrastructure.CustomSearchModelBinding;
@@ -35,27 +36,8 @@ namespace Travel
             ModelBinders.Binders.Add(typeof(decimal), new DecimalModelBinder());
             ModelBinders.Binders.Add(typeof(decimal?), new DecimalModelBinder());
 
-            var builder = new ContainerBuilder();
-
-            builder.RegisterType<ApplicationUserService>().As<IApplicationUserService>();
-            builder.RegisterType<FormsAuthenticationService>().As<IAuthenticationService>();
-            builder.RegisterType<CategoryService>().As<ICategoryService>();
-            builder.RegisterType<AboutService>().As<IAboutService>();
-            builder.RegisterType<ContactService>().As<IContactService>();
-            builder.RegisterType<BlogService>().As<IBlogService>();
-            builder.RegisterType<SliderService>().As<ISliderService>();
-            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
-
-            builder.RegisterType<HomeController>();
-            builder.RegisterModelBinders(typeof(MvcApplication).Assembly);
-            builder.RegisterModelBinderProvider();
-            builder.RegisterModule<AutofacWebTypesModule>();
-            builder.RegisterSource(new ViewRegistrationSource());
-            builder.RegisterFilterProvider();
-
-            IContainer container = builder.Build();
-
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            AutofacConfiguration.Init();
+            AutoMapperConfiguration.Init();
         }
     }
 }

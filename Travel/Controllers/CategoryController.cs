@@ -4,6 +4,7 @@ using Services.CategoryServices;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using Travel.Configurations;
 using Travel.Models.Category;
 
 namespace Travel.Controllers
@@ -90,12 +91,7 @@ namespace Travel.Controllers
                     Request.Files[0].SaveAs(Server.MapPath(path));
                 }
 
-                var category = new Category
-                {
-                    Id = model.Id,
-                    IsActive = model.IsActive,
-                    Title = model.Title
-                };
+                Category category = model.MapTo<CategoryModel, Category>();
 
                 _categoryService.Insert(category);
             }

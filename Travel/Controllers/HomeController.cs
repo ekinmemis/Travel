@@ -1,8 +1,10 @@
-﻿using Humanizer;
+﻿using Core.Domain.Main;
+using Humanizer;
 using Services.AboutServices;
 using Services.ContactServices;
 using Services.SliderServices;
 using System.Web.Mvc;
+using Travel.Configurations;
 using Travel.Models.About;
 using Travel.Models.Contact;
 using Travel.Models.Index;
@@ -18,8 +20,10 @@ namespace Travel.Controllers
         /// Defines the _aboutService.
         /// </summary>
         private readonly IAboutService _aboutService;
+
         private readonly IContactService _contactService;
         private readonly ISliderService _sliderService;
+
         public HomeController(IAboutService aboutService, IContactService contactService, ISliderService sliderService)
         {
             _aboutService = aboutService;
@@ -45,18 +49,9 @@ namespace Travel.Controllers
         public ActionResult About()
         {
             var about = _aboutService.GetActiveAbout();
-
-            return View(new AboutModel()
-            {
-                CreateDate = about.CreateDate,
-                DateString = about.CreateDate.Humanize(),
-                Definition = about.Definition,
-                Image = about.Image,
-                IsActive = about.IsActive,
-                ShortDefinition = about.ShortDefinition,
-                Title = about.Title,
-                Note = about.Note
-            });
+            AboutModel model = about.MapTo<About, AboutModel>();
+            model.DateString = model.CreateDate.Humanize();
+            return View(model);
         }
 
         /// <summary>
@@ -66,20 +61,8 @@ namespace Travel.Controllers
         public ActionResult Contact()
         {
             var contact = _contactService.GetActiveContact();
-
-            return View(new ContactModel()
-            {
-                Id = contact.Id,
-                Title = contact.Title,
-                Definition = contact.Definition,
-                EmailAddress = contact.EmailAddress,
-                EmailSubject = contact.EmailSubject,
-                IsActive = contact.IsActive,
-                PhoneNumberSubject = contact.PhoneNumberSubject,
-                PhoneNumberTitle = contact.PhoneNumberTitle,
-                PostalAddressSubject = contact.PostalAddressSubject,
-                PostalAdressTitle = contact.PostalAdressTitle
-            });
+            ContactModel model = contact.MapTo<Contact, ContactModel>();
+            return View(model);
         }
 
         /// <summary>

@@ -11,14 +11,7 @@ namespace Travel.Controllers
     [Authorize]
     public class AdminController : Controller
     {
-        /// <summary>
-        /// Defines the _formsAuthenticationService.
-        /// </summary>
         private readonly IAuthenticationService _formsAuthenticationService;
-
-        /// <summary>
-        /// Defines the _applicationUserService.
-        /// </summary>
         private readonly IApplicationUserService _applicationUserService;
 
         public AdminController(IAuthenticationService formsAuthenticationService, IApplicationUserService applicationUserService)

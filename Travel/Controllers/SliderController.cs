@@ -3,6 +3,7 @@ using Services.SliderServices;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using Travel.Configurations;
 using Travel.Models.Slider;
 
 namespace Travel.Controllers
@@ -89,13 +90,7 @@ namespace Travel.Controllers
                     Request.Files[0].SaveAs(Server.MapPath(path));
                 }
 
-                var slider = new Slider
-                {
-                    Id = model.Id,
-                    Image = image.FileName,
-                    IsActive = model.IsActive,
-                    Title = model.Title
-                };
+                Slider slider = model.MapTo<SliderModel, Slider>();
 
                 _sliderService.Insert(slider);
             }

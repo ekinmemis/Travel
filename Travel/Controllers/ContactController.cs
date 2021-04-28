@@ -3,6 +3,7 @@ using Services.ContactServices;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using Travel.Configurations;
 using Travel.Models.Contact;
 
 namespace Travel.Controllers
@@ -82,19 +83,7 @@ namespace Travel.Controllers
         {
             if (ModelState.IsValid)
             {
-                var contact = new Contact
-                {
-                    Id = model.Id,
-                    Title = model.Title,
-                    Definition = model.Definition,
-                    EmailAddress = model.EmailAddress,
-                    EmailSubject = model.EmailSubject,
-                    IsActive = model.IsActive,
-                    PhoneNumberSubject = model.PhoneNumberSubject,
-                    PhoneNumberTitle = model.PhoneNumberTitle,
-                    PostalAddressSubject = model.PostalAddressSubject,
-                    PostalAdressTitle = model.PostalAdressTitle
-                };
+                Contact contact = model.MapTo<ContactModel, Contact>();
 
                 _contactService.Insert(contact);
             }

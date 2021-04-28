@@ -3,6 +3,7 @@ using Services.AboutServices;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using Travel.Configurations;
 using Travel.Models.About;
 
 namespace Travel.Controllers
@@ -89,17 +90,7 @@ namespace Travel.Controllers
                     Request.Files[0].SaveAs(Server.MapPath(path));
                 }
 
-                var about = new About
-                {
-                    Id = model.Id,
-                    CreateDate = model.CreateDate,
-                    Definition = model.Definition,
-                    ShortDefinition = model.ShortDefinition,
-                    Image = image.FileName,
-                    IsActive = model.IsActive,
-                    Note = model.Note,
-                    Title = model.Title
-                };
+                About about = model.MapTo<AboutModel, About>();
 
                 _aboutService.Insert(about);
             }
