@@ -84,6 +84,8 @@ namespace Travel.Controllers
         {
             if (ModelState.IsValid)
             {
+                Category category = model.MapTo<CategoryModel, Category>();
+
                 if (image != null)
                 {
                     string imagee = Path.GetFileName(image.FileName);
@@ -91,7 +93,6 @@ namespace Travel.Controllers
                     Request.Files[0].SaveAs(Server.MapPath(path));
                 }
 
-                Category category = model.MapTo<CategoryModel, Category>();
 
                 _categoryService.Insert(category);
             }

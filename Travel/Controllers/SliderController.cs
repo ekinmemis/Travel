@@ -83,14 +83,17 @@ namespace Travel.Controllers
         {
             if (ModelState.IsValid)
             {
+                Slider slider = model.MapTo<SliderModel, Slider>();
+                
                 if (image != null)
                 {
                     string imagee = Path.GetFileName(image.FileName);
                     string path = "~/Content/travel/images/" + imagee;
                     Request.Files[0].SaveAs(Server.MapPath(path));
+                    slider.Image = image.FileName;
                 }
 
-                Slider slider = model.MapTo<SliderModel, Slider>();
+
 
                 _sliderService.Insert(slider);
             }

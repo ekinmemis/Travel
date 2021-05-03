@@ -83,14 +83,15 @@ namespace Travel.Controllers
         {
             if (ModelState.IsValid)
             {
+                About about = model.MapTo<AboutModel, About>();
+
                 if (image != null)
                 {
                     string imagee = Path.GetFileName(image.FileName);
                     string path = "~/Content/travel/images/" + imagee;
                     Request.Files[0].SaveAs(Server.MapPath(path));
+                    about.Image = image.FileName;
                 }
-
-                About about = model.MapTo<AboutModel, About>();
 
                 _aboutService.Insert(about);
             }
