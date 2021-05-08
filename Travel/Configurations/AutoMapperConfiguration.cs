@@ -2,6 +2,7 @@
 using Core.Domain.Categories;
 using Core.Domain.Main;
 using Travel.Models.About;
+using Travel.Models.Blog;
 using Travel.Models.Category;
 using Travel.Models.Contact;
 using Travel.Models.Slider;
@@ -28,6 +29,9 @@ namespace Travel.Configurations
 
                 cfg.CreateMap<Slider, SliderModel>();
                 cfg.CreateMap<SliderModel, Slider>().IgnoreAllVirtual();
+
+                cfg.CreateMap<Blog, BlogModel>();
+                cfg.CreateMap<BlogModel, Blog>().IgnoreAllVirtual();
             });
 
             Mapper = MapperConfiguration.CreateMapper();

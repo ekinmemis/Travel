@@ -757,6 +757,8 @@
     <Content Include="Content\travel\images\avatar\1.jpg" />
     <Content Include="Content\travel\images\avatar\2.jpg" />
     <Content Include="Content\travel\images\avatar\3.jpg" />
+    <Content Include="Content\travel\images\blog\1.jpg" />
+    <Content Include="Content\travel\images\blog\2.jpg" />
     <Content Include="Content\travel\images\featured-slider\1.jpg" />
     <Content Include="Content\travel\images\featured-slider\2.jpg" />
     <Content Include="Content\travel\images\featured-slider\3.jpg" />
@@ -830,6 +832,7 @@
     <Compile Include="Configurations\AutofacConfiguration.cs" />
     <Compile Include="Configurations\AutoMapperConfiguration.cs" />
     <Compile Include="Configurations\MappingExtensions.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -841,6 +844,8 @@
     </Compile>
     <Compile Include="Infrastructure\CustomSearchModelBinding.cs" />
     <Compile Include="Infrastructure\DecimalModelBinder.cs" />
+    <Compile Include="Models\Blog\BlogListModel.cs" />
+    <Compile Include="Models\Blog\BlogModel.cs" />
     <Compile Include="Models\Slider\SliderListModel.cs" />
     <Compile Include="Models\Slider\SliderModel.cs" />
     <Compile Include="Models\Index\IndexListModel.cs" />
@@ -915,6 +920,9 @@
     <Content Include="Views\Slider\Edit.cshtml" />
     <Content Include="Views\Slider\List.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\Blog\Create.cshtml" />
+    <Content Include="Views\Blog\Edit.cshtml" />
+    <Content Include="Views\Blog\List.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\_RightSideBar.cshtml" />
     <None Include="Web.Debug.config">

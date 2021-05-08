@@ -1,13 +1,16 @@
-﻿using Core.Domain.Categories;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
-namespace Core.Domain.Main
+namespace Travel.Models.Blog
 {
-    /// <summary>
-    /// Defines the <see cref="Blog" />.
-    /// </summary>
-    public partial class Blog : BaseEntity
+    public class BlogModel
     {
+        public BlogModel()
+        {
+            this.Categories = new List<SelectListItem>();
+        }
+        public int Id { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public string Title1 { get; set; }
@@ -35,6 +38,7 @@ namespace Core.Domain.Main
         public string Ol3 { get; set; }
         public string Definition8 { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public IList<SelectListItem> Categories { get; set; }
+        public bool IsActive { get; set; }
     }
 }

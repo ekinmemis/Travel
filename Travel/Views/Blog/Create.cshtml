@@ -1,0 +1,248 @@
+﻿@model Travel.Models.Blog.BlogModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="content-wrapper">
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+            <div class="d-flex">
+                <div class="breadcrumb">
+                    <a href="@Url.Action("List","Blog")" class="breadcrumb-item"><i class="icon-info22 mr-2"></i> Blog</a>
+                    <span class="breadcrumb-item active">Ekle</span>
+                </div>
+
+                <a href="@Url.Action("List","Blog")" class="header-elements-toggle text-default d-md-none"><i class="icon-info22"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+    <!-- Content area -->
+    <div class="content">
+        @using (Html.BeginForm("Create", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="card">
+                <div class="card-header bg-white header-elements-sm-inline">
+                    <h6 class="card-title"> Blog Ekle </h6>
+                    <div class="header-elements">
+                        <button type="submit" name="save" value="save" class="btn bg-blue"><i class="icon-floppy-disk mr-1"></i> Kaydet </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Üst Başlık</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Title1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Title1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Fotoğraf - 1</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(f => f.Image1, new { htmlAttributes = new { @class = "from-control", type = "file" } })
+                            @Html.ValidationMessageFor(model => model.Image1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Fotoğrafın Açıklaması</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Image1Definition, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Image1Definition, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 1</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 2</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Fotoğraf - 2</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(f => f.Image2, new { htmlAttributes = new { @class = "from-control", type = "file" } })
+                            @Html.ValidationMessageFor(model => model.Image2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Fotoğrafın Açıklaması</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Image2Definition, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Image2Definition, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 3</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition3, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition3, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">İç Başlık - 1</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Title2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Title2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 4</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition4, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition4, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Madde - 1</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Li1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Li1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Madde - 2</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Li2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Li2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Madde - 3</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Li3, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Li3, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 5</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition5, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition5, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">İç Başlık - 2</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Title3, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Title3, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 6</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition6, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition6, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Dip Not - 1</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Note1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Note1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">İç Başlık - 3</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Title4, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Title4, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 7</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition7, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition7, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Dip Not - 2</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Note2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Note2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Liste Maddesi - 1</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Ol1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Ol1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Liste Maddesi - 2</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Ol2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Ol2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Liste Maddesi - 3</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Ol3, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Ol3, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Paragraf - 8</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Definition8, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Definition8, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Kategorisi</label>
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.CategoryId, Model.Categories, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Aktif mi</label>
+                        <div class="col-md-10">
+                            @Html.CheckBoxFor(model => model.IsActive, new { @class = "form-check" })
+                            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <!-- /content area -->
+</div>

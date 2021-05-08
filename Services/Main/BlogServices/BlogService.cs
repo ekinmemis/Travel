@@ -43,7 +43,7 @@ namespace Services.BlogServices
             var query = _blogRepository.Table.Where(f => f.Deleted != true);
 
             if (!string.IsNullOrEmpty(title))
-                query = query.Where(a => a.Title.Contains(title));
+                query = query.Where(a => a.Title1.Contains(title));
 
             query = query.OrderBy(o => o.Id);
 
