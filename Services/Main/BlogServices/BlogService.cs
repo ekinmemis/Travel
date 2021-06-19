@@ -1,6 +1,8 @@
 ﻿using Core;
 using Core.Domain.Main;
+
 using Data.EfRepository;
+
 using System.Linq;
 
 namespace Services.BlogServices
@@ -38,9 +40,12 @@ namespace Services.BlogServices
         /// <param name="pageIndex">The pageIndex<see cref="int"/>.</param>
         /// <param name="pageSize">The pageSize<see cref="int"/>.</param>
         /// <returns>The <see cref="IPagedList{Blog}"/>.</returns>
-        public IPagedList<Blog> GetAllBlogs(string title = "", int pageIndex = 0, int pageSize = int.MaxValue)
+        public IPagedList<Blog> GetAllBlogs(string title = "", int categoryId = 0, int pageIndex = 0, int pageSize = int.MaxValue)
         {
             var query = _blogRepository.Table.Where(f => f.Deleted != true);
+
+            if (categoryId > 0)
+                query = query.Where(f => f.CategoryId == categoryId);
 
             if (!string.IsNullOrEmpty(title))
                 query = query.Where(a => a.Title1.Contains(title));

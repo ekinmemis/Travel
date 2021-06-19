@@ -1,21 +1,17 @@
 ﻿using Core.Domain.Main;
+
 using Services.ContactServices;
-using System.IO;
+
 using System.Web;
 using System.Web.Mvc;
+
 using Travel.Configurations;
 using Travel.Models.Contact;
 
 namespace Travel.Controllers
 {
-    /// <summary>
-    /// Defines the <see cref="ContactController" />.
-    /// </summary>
     public class ContactController : Controller
     {
-        /// <summary>
-        /// Defines the _contactService.
-        /// </summary>
         private readonly IContactService _contactService;
 
         public ContactController(IContactService contactService)
@@ -23,29 +19,16 @@ namespace Travel.Controllers
             _contactService = contactService;
         }
 
-        /// <summary>
-        /// The Index.
-        /// </summary>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Index()
         {
             return RedirectToAction("List");
         }
 
-        /// <summary>
-        /// The List.
-        /// </summary>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult List()
         {
             return View(new ContactListModel());
         }
 
-        /// <summary>
-        /// The List.
-        /// </summary>
-        /// <param name="model">The model<see cref="ContactListModel"/>.</param>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         [HttpPost]
         public ActionResult List(ContactListModel model)
         {
@@ -63,21 +46,11 @@ namespace Travel.Controllers
             });
         }
 
-        /// <summary>
-        /// The Create.
-        /// </summary>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Create()
         {
             return View(new ContactModel());
         }
 
-        /// <summary>
-        /// The Create.
-        /// </summary>
-        /// <param name="model">The model<see cref="ContactModel"/>.</param>
-        /// <param name="image">The image<see cref="HttpPostedFileBase"/>.</param>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         [HttpPost]
         public ActionResult Create(ContactModel model)
         {
@@ -91,11 +64,6 @@ namespace Travel.Controllers
             return RedirectToAction("List");
         }
 
-        /// <summary>
-        /// The Edit.
-        /// </summary>
-        /// <param name="id">The id<see cref="int"/>.</param>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Edit(int id)
         {
             var contact = _contactService.GetContactById(id);
@@ -120,12 +88,6 @@ namespace Travel.Controllers
             return View(model);
         }
 
-        /// <summary>
-        /// The Edit.
-        /// </summary>
-        /// <param name="model">The model<see cref="ContactModel"/>.</param>
-        /// <param name="image">The image<see cref="HttpPostedFileBase"/>.</param>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         [HttpPost]
         public ActionResult Edit(ContactModel model, HttpPostedFileBase image)
         {
@@ -153,11 +115,6 @@ namespace Travel.Controllers
             return RedirectToAction("List");
         }
 
-        /// <summary>
-        /// The Delete.
-        /// </summary>
-        /// <param name="id">The id<see cref="int"/>.</param>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Delete(int id)
         {
             var contact = _contactService.GetContactById(id);

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+
 using Core.Domain.Categories;
 using Core.Domain.Main;
+
 using Travel.Models.About;
 using Travel.Models.Blog;
 using Travel.Models.Category;
@@ -9,8 +11,14 @@ using Travel.Models.Slider;
 
 namespace Travel.Configurations
 {
+    /// <summary>
+    /// Defines the <see cref="AutoMapperConfiguration" />.
+    /// </summary>
     public static class AutoMapperConfiguration
     {
+        /// <summary>
+        /// The Init.
+        /// </summary>
         public static void Init()
         {
             MapperConfiguration = new MapperConfiguration(cfg =>
@@ -37,8 +45,14 @@ namespace Travel.Configurations
             Mapper = MapperConfiguration.CreateMapper();
         }
 
+        /// <summary>
+        /// Gets the Mapper.
+        /// </summary>
         public static IMapper Mapper { get; private set; }
 
+        /// <summary>
+        /// Gets the MapperConfiguration.
+        /// </summary>
         public static MapperConfiguration MapperConfiguration { get; private set; }
     }
 }

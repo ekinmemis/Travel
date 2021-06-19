@@ -15,7 +15,7 @@ namespace Services.BlogServices
         /// <param name="pageIndex">The pageIndex<see cref="int"/>.</param>
         /// <param name="pageSize">The pageSize<see cref="int"/>.</param>
         /// <returns>The <see cref="IPagedList{Blog}"/>.</returns>
-        IPagedList<Blog> GetAllBlogs(string title = "", int pageIndex = 0, int pageSize = int.MaxValue);
+        IPagedList<Blog> GetAllBlogs(string title = "",int categoryId = 0, int pageIndex = 0, int pageSize = int.MaxValue);
 
         /// <summary>
         /// The GetBlogById.

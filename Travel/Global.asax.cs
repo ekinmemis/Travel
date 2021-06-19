@@ -1,21 +1,9 @@
-using Autofac;
-using Autofac.Core.Activators.Reflection;
-using Autofac.Integration.Mvc;
-using Data.EfRepository;
-using Service.Authentication;
-using Services.AboutServices;
-using Services.ApplicationUserServices;
-using Services.BlogServices;
-using Services.CategoryServices;
-using Services.ContactServices;
-using Services.SliderServices;
-using System.Linq;
-using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
+
 using Travel.Configurations;
-using Travel.Controllers;
 using Travel.Infrastructure;
+
 using static Travel.Infrastructure.CustomSearchModelBinding;
 
 namespace Travel

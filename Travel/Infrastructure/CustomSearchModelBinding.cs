@@ -5,17 +5,8 @@ using System.Web.Mvc;
 
 namespace Travel.Infrastructure
 {
-    /// <summary>
-    /// Defines the <see cref="CustomSearchModelBinding" />.
-    /// </summary>
     public class CustomSearchModelBinding : IModelBinder
     {
-        /// <summary>
-        /// The BindModel.
-        /// </summary>
-        /// <param name="controllerContext">The controllerContext<see cref="ControllerContext"/>.</param>
-        /// <param name="bindingContext">The bindingContext<see cref="ModelBindingContext"/>.</param>
-        /// <returns>The <see cref="object"/>.</returns>
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
             try
@@ -55,16 +46,8 @@ namespace Travel.Infrastructure
             }
         }
 
-        /// <summary>
-        /// Defines the <see cref="DataTablesToObjectModelBinderProvider" />.
-        /// </summary>
         public class DataTablesToObjectModelBinderProvider : IModelBinderProvider
         {
-            /// <summary>
-            /// The GetBinder.
-            /// </summary>
-            /// <param name="modelType">The modelType<see cref="Type"/>.</param>
-            /// <returns>The <see cref="IModelBinder"/>.</returns>
             public IModelBinder GetBinder(Type modelType)
             {
                 if (HttpContext.Current.Request.RequestType == "POST" && modelType.Name.Contains("ListModel"))

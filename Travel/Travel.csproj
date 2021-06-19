@@ -839,17 +839,22 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Extensions\Pager.cs" />
+    <Compile Include="Factories\BlogModelFactory.cs" />
+    <Compile Include="Factories\IBlogModelFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\CustomSearchModelBinding.cs" />
     <Compile Include="Infrastructure\DecimalModelBinder.cs" />
+    <Compile Include="Models\BasePageableModel.cs" />
     <Compile Include="Models\Blog\BlogListModel.cs" />
     <Compile Include="Models\Blog\BlogModel.cs" />
+    <Compile Include="Models\Blog\BlogPagingFilteringModel.cs" />
+    <Compile Include="Models\IPageableModel.cs" />
     <Compile Include="Models\Slider\SliderListModel.cs" />
     <Compile Include="Models\Slider\SliderModel.cs" />
-    <Compile Include="Models\Index\IndexListModel.cs" />
-    <Compile Include="Models\Index\IndexModel.cs" />
     <Compile Include="Models\Category\CategoryListModel.cs" />
     <Compile Include="Models\Category\CategoryModel.cs" />
     <Compile Include="Models\Contact\ContactListModel.cs" />
@@ -925,6 +930,8 @@
     <Content Include="Views\Blog\List.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\_RightSideBar.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\Home\Single.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

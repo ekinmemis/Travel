@@ -1,23 +1,22 @@
-﻿using Core.Domain.Categories;
-using Core.Domain.Main;
+﻿using Core.Domain.Main;
+
 using Services.BlogServices;
 using Services.CategoryServices;
+
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+
 using Travel.Configurations;
 using Travel.Models.Blog;
 
 namespace Travel.Controllers
 {
-    /// <summary>
-    /// Defines the <see cref="BlogController" />.
-    /// </summary>
     public class BlogController : Controller
     {
         private readonly IBlogService _blogService;
+
         private readonly ICategoryService _categoryService;
 
         public BlogController(IBlogService blogService, ICategoryService categoryService)
@@ -63,7 +62,6 @@ namespace Travel.Controllers
             return View(model);
         }
 
-    
         [HttpPost]
         public ActionResult Create(BlogModel model, HttpPostedFileBase image1, HttpPostedFileBase image2)
         {
@@ -92,7 +90,7 @@ namespace Travel.Controllers
 
             return RedirectToAction("List");
         }
- 
+
         public ActionResult Edit(int id)
         {
             var blog = _blogService.GetBlogById(id);

@@ -1,17 +1,18 @@
 ﻿using Service.Authentication;
+
 using Services.ApplicationUserServices;
+
 using System.Web.Mvc;
+
 using Travel.Models.Admin;
 
 namespace Travel.Controllers
 {
-    /// <summary>
-    /// Defines the <see cref="AdminController" />.
-    /// </summary>
     [Authorize]
     public class AdminController : Controller
     {
         private readonly IAuthenticationService _formsAuthenticationService;
+
         private readonly IApplicationUserService _applicationUserService;
 
         public AdminController(IAuthenticationService formsAuthenticationService, IApplicationUserService applicationUserService)
@@ -20,32 +21,18 @@ namespace Travel.Controllers
             _applicationUserService = applicationUserService;
         }
 
-        // GET: Admin
-        /// <summary>
-        /// The Index.
-        /// </summary>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         [AllowAnonymous]
         public ActionResult Index()
         {
             return RedirectToAction("Login");
         }
 
-        /// <summary>
-        /// The Login.
-        /// </summary>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
-        /// <summary>
-        /// The Login.
-        /// </summary>
-        /// <param name="model">The model<see cref="LoginModel"/>.</param>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -75,19 +62,11 @@ namespace Travel.Controllers
             return View();
         }
 
-        /// <summary>
-        /// The Content.
-        /// </summary>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Content()
         {
             return View();
         }
 
-        /// <summary>
-        /// The Logout.
-        /// </summary>
-        /// <returns>The <see cref="ActionResult"/>.</returns>
         public ActionResult Logout()
         {
             _formsAuthenticationService.SignOut();

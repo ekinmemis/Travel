@@ -1,0 +1,69 @@
+﻿@model Travel.Models.Blog.BlogModel
+
+<div id="main-content" class="main-content clearfix" data-sidebar="right">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="blog-posts">
+                    <article class="post post-single">
+                        <!-- Title -->
+                        <h3 class="title">
+                            @Model.Title1
+                        </h3>
+                        <!-- End Title -->
+                        <!-- Post Details -->
+                        <div class="post-details">
+                            <a href="#" class="post-date">@Model.CreateDate</a>
+
+                            <!-- Post Category -->
+                            <div class="post-cat">
+                                <a href="#" rel="category tag">Gezidolu</a>
+                            </div>
+                            <!-- End Post Category -->
+                        </div>
+                        <!-- End Post Details -->
+                        <!-- Thumbnail -->
+                        <div class="post-media">
+                            <img src="~/content/travel/images/blog/@Model.Image1" alt="@Model.Image1Definition">
+                        </div>
+                        <!-- End Thumbnail -->
+
+                        <div class="the-excerpt">
+                            <p>@Model.Definition1<span id="more-61"></span></p>
+                            <p>@Model.Definition2</p>
+                            <div class="wp-caption alignnone">
+                                <img class="wp-image-28 size-full" src="~/content/travel/images/blog/@Model.Image2" />
+                                <p class="wp-caption-text">@Model.Image2Definition</p>
+                            </div>
+                            <p>@Model.Definition3</p>
+                            <h4>@Model.Title2</h4>
+                            <p>@Model.Definition4</p>
+                            <p>@Model.Definition5</p>
+                            <ul>
+                                <li>@Model.Li1</li>
+                                <li>@Model.Li2</li>
+                                <li>@Model.Li3</li>
+                            </ul>
+                            <p>@Model.Definition6</p>
+                            <h4>@Model.Title3</h4>
+                            <p>@Model.Definition6</p>
+                            <blockquote>
+                                <p>@Model.Note1</p>
+                            </blockquote>
+                            <footer>@Model.Definition7</footer>
+                            <h4>@Model.Title4</h4>
+                            <p>@Model.Definition8</p>
+                            <blockquote><p>@Model.Note2</p></blockquote>
+                            <ol>
+                                <li>@Model.Ol1</li>
+                                <li>@Model.Ol2</li>
+                                <li>@Model.Ol3</li>
+                            </ol>
+                        </div>
+                        <!-- End Post Tags -->
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
